@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AssetTracking", "AssetTracking\AssetTracking.csproj", "{C89F3912-91BC-410D-A23F-7E31DD4CFF70}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AssetTracking.BLL", "AssetTracking.BLL\AssetTracking.BLL.csproj", "{089434E2-7D1F-4688-A4EB-5FC875B22AAB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AssetTracking.DAL", "AssetTracking.DAL\AssetTracking.DAL.csproj", "{6D7E6FF1-52DA-40FF-AC30-70E414D0370C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AssetTracking.Models", "AssetTracking.Models\AssetTracking.Models.csproj", "{3CCBDA13-C364-49F4-A5D0-EB004EC60AE0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C89F3912-91BC-410D-A23F-7E31DD4CFF70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C89F3912-91BC-410D-A23F-7E31DD4CFF70}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C89F3912-91BC-410D-A23F-7E31DD4CFF70}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C89F3912-91BC-410D-A23F-7E31DD4CFF70}.Release|Any CPU.Build.0 = Release|Any CPU
+		{089434E2-7D1F-4688-A4EB-5FC875B22AAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{089434E2-7D1F-4688-A4EB-5FC875B22AAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{089434E2-7D1F-4688-A4EB-5FC875B22AAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{089434E2-7D1F-4688-A4EB-5FC875B22AAB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D7E6FF1-52DA-40FF-AC30-70E414D0370C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D7E6FF1-52DA-40FF-AC30-70E414D0370C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D7E6FF1-52DA-40FF-AC30-70E414D0370C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D7E6FF1-52DA-40FF-AC30-70E414D0370C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CCBDA13-C364-49F4-A5D0-EB004EC60AE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CCBDA13-C364-49F4-A5D0-EB004EC60AE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CCBDA13-C364-49F4-A5D0-EB004EC60AE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CCBDA13-C364-49F4-A5D0-EB004EC60AE0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
