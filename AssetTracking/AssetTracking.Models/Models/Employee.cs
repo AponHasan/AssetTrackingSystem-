@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace AssetTracking.Models.Models
 {
-    class Employee
+    public class Employee
     {
 
         public int EmployeeID { get; set; }

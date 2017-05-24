@@ -39,7 +39,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="OrganizationManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AssetTracking.DAL\AssetTracking.DAL.csproj">
+      <Project>{6d7e6ff1-52da-40ff-ac30-70e414d0370c}</Project>
+      <Name>AssetTracking.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AssetTracking.Models\AssetTracking.Models.csproj">
+      <Project>{3CCBDA13-C364-49F4-A5D0-EB004EC60AE0}</Project>
+      <Name>AssetTracking.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

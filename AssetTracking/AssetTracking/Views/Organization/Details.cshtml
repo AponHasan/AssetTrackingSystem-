@@ -1,0 +1,42 @@
+﻿@model AssetTracking.Models.Models.Organization
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Organization</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.OrganizationName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OrganizationName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OrganizationShortName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OrganizationShortName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OrganizationLocation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OrganizationLocation)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.OrganizationID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

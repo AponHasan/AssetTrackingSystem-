@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace AssetTracking.Models.Models
 {
-    class WarrantyPeriodUnit
+    public class WarrantyPeriodUnit
     {
         public int WarrantyPeriodUnitID { get; set; }
 

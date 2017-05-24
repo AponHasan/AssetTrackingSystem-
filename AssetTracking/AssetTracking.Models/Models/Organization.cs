@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace AssetTracking.Models.Models
 {
-    class Organization
+    public class Organization
     {
 
     
