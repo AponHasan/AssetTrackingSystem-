@@ -17,11 +17,13 @@ namespace AssetTracking.Controllers
     {
         //private AssetTrackDbContext db = new AssetTrackDbContext();
         private IOrganizationBranchManager _organizationBranchManager;
+        private IOrganizationManager _organizationManager;
 
         // GET: /Organization/
         public OrganizationBranchController()
         {
             _organizationBranchManager = new OrganizationBranchManager();
+            _organizationManager=new OrganizationManager();
         }
 
         // GET: /OrganizationBranch/
@@ -49,7 +51,7 @@ namespace AssetTracking.Controllers
         // GET: /OrganizationBranch/Create
         public ActionResult Create()
         {
-            var organizationList = _organizationBranchManager.GetAll();
+            var organizationList = _organizationManager.GetAll();
             ViewBag.OrganizationID = new SelectList(organizationList, "OrganizationID", "OrganizationName");
             return View();
         }
@@ -59,7 +61,7 @@ namespace AssetTracking.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include="OrganizationBranchID,OrganizationID,OrganizationBranchName,OrganizatioBranchShortName")] OrganizationBranch organizationbranch)
+        public ActionResult Create([Bind(Include = "OrganizationBranchID,OrganizationID,OrganizationBranchName,OrganizatioBranchShortName")] OrganizationBranch organizationbranch)
         {
             if (ModelState.IsValid)
             {
