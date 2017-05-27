@@ -12,8 +12,12 @@ namespace AssetTracking.DAL
 {
     public class OrganizationBranchRepository:CommonRepository<OrganizationBranch>,IOrganizationBranchRepository
     {
-        public OrganizationBranchRepository() : base(new AssetTrackDbContext())
+        public OrganizationBranchRepository()
+            : base(new AssetTrackDbContext())
         {
         }
+        //public OrganizationBranchRepository(DbContext dbContext) : base(dbContext)
+        //{
+        //}
     }
 }

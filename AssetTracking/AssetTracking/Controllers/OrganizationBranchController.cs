@@ -30,7 +30,9 @@ namespace AssetTracking.Controllers
         public ActionResult Index()
         {
             var organizationbranches = _organizationBranchManager.GetAll();
+            
             return View(organizationbranches.ToList());
+           
         }
 
         // GET: /OrganizationBranch/Details/5
@@ -45,6 +47,8 @@ namespace AssetTracking.Controllers
             {
                 return HttpNotFound();
             }
+            var organizationList = _organizationManager.GetAll();
+            ViewBag.OrganizationID = new SelectList(organizationList, "OrganizationID", "OrganizationName");
             return View(organizationbranch);
         }
 
@@ -88,7 +92,7 @@ namespace AssetTracking.Controllers
             {
                 return HttpNotFound();
             }
-            var organizationList = _organizationBranchManager.GetAll();
+            var organizationList = _organizationManager.GetAll();
             ViewBag.OrganizationID = new SelectList(organizationList, "OrganizationID", "OrganizationName");
             return View(organizationbranch);
         }
@@ -104,8 +108,8 @@ namespace AssetTracking.Controllers
             {
                 _organizationBranchManager.Update(organizationbranch);
                 return RedirectToAction("Index");
-            } 
-            var organizationList = _organizationBranchManager.GetAll();
+            }
+            var organizationList = _organizationManager.GetAll();
             ViewBag.OrganizationID = new SelectList(organizationList, "OrganizationID", "OrganizationName");
             return View(organizationbranch);
         }
@@ -122,6 +126,8 @@ namespace AssetTracking.Controllers
             {
                 return HttpNotFound();
             }
+            var organizationList = _organizationManager.GetAll();
+            ViewBag.OrganizationID = new SelectList(organizationList, "OrganizationID", "OrganizationName");
             return View(organizationbranch);
         }
 
