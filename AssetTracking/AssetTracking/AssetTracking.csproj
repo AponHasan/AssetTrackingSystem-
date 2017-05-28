@@ -235,6 +235,8 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\AssetLocationController.cs" />
+    <Compile Include="Controllers\DepartmentController.cs" />
     <Compile Include="Controllers\OrganizationBranchController.cs" />
     <Compile Include="Controllers\OrganizationController.cs" />
     <Compile Include="Global.asax.cs">
@@ -257,6 +259,16 @@
     <Content Include="Views\OrganizationBranch\Details.cshtml" />
     <Content Include="Views\OrganizationBranch\Edit.cshtml" />
     <Content Include="Views\OrganizationBranch\Index.cshtml" />
+    <Content Include="Views\AssetLocation\Create.cshtml" />
+    <Content Include="Views\AssetLocation\Delete.cshtml" />
+    <Content Include="Views\AssetLocation\Details.cshtml" />
+    <Content Include="Views\AssetLocation\Edit.cshtml" />
+    <Content Include="Views\AssetLocation\Index.cshtml" />
+    <Content Include="Views\Department\Create.cshtml" />
+    <Content Include="Views\Department\Delete.cshtml" />
+    <Content Include="Views\Department\Details.cshtml" />
+    <Content Include="Views\Department\Edit.cshtml" />
+    <Content Include="Views\Department\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

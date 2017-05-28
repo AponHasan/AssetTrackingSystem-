@@ -49,8 +49,12 @@
     <Compile Include="Database\AssetTrackDbContext.cs" />
     <Compile Include="Interfaces\BaseInterface\ICommonRepository.cs" />
     <Compile Include="Interfaces\BaseInterface\IManager.cs" />
+    <Compile Include="Interfaces\IModelManager\IAssetLocationManager.cs" />
+    <Compile Include="Interfaces\IModelManager\IDepartmentManager.cs" />
     <Compile Include="Interfaces\IModelManager\IOrganizationBranchManager.cs" />
     <Compile Include="Interfaces\IModelManager\IOrganizationManager.cs" />
+    <Compile Include="Interfaces\IModelRepository\IAssetLocationRepository.cs" />
+    <Compile Include="Interfaces\IModelRepository\IDepartmentRepository.cs" />
     <Compile Include="Interfaces\IModelRepository\IOrganizationBranchRepository.cs" />
     <Compile Include="Interfaces\IModelRepository\IOrganizationRepository.cs" />
     <Compile Include="Models\AssetLocation.cs" />
