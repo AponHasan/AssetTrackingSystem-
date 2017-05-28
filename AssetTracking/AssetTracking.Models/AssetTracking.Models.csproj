@@ -50,6 +50,7 @@
     <Compile Include="Interfaces\BaseInterface\ICommonRepository.cs" />
     <Compile Include="Interfaces\BaseInterface\IManager.cs" />
     <Compile Include="Interfaces\IModelManager\IAssetLocationManager.cs" />
+    <Compile Include="Interfaces\IModelManager\ICategoryManager.cs" />
     <Compile Include="Interfaces\IModelManager\IDepartmentManager.cs" />
     <Compile Include="Interfaces\IModelManager\IDesignationManager.cs" />
     <Compile Include="Interfaces\IModelManager\IEmployeeManager.cs" />
@@ -57,6 +58,7 @@
     <Compile Include="Interfaces\IModelManager\IOrganizationBranchManager.cs" />
     <Compile Include="Interfaces\IModelManager\IOrganizationManager.cs" />
     <Compile Include="Interfaces\IModelRepository\IAssetLocationRepository.cs" />
+    <Compile Include="Interfaces\IModelRepository\ICategoryRepogitory.cs" />
     <Compile Include="Interfaces\IModelRepository\IDepartmentRepository.cs" />
     <Compile Include="Interfaces\IModelRepository\IDesignationRepository.cs" />
     <Compile Include="Interfaces\IModelRepository\IEmployeeRepository.cs" />

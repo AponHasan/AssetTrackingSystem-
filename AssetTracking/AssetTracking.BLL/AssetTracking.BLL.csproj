@@ -40,6 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssetLocationManager.cs" />
+    <Compile Include="CategoryManager.cs" />
     <Compile Include="DepartmentManager.cs" />
     <Compile Include="DesignationManager.cs" />
     <Compile Include="EmployeeManager.cs" />
