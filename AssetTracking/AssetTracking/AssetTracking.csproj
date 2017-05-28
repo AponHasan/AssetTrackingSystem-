@@ -239,6 +239,7 @@
     <Compile Include="Controllers\DepartmentController.cs" />
     <Compile Include="Controllers\DesignationController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
+    <Compile Include="Controllers\GeneralCategoryController.cs" />
     <Compile Include="Controllers\OrganizationBranchController.cs" />
     <Compile Include="Controllers\OrganizationController.cs" />
     <Compile Include="Global.asax.cs">
@@ -281,6 +282,11 @@
     <Content Include="Views\Employee\Details.cshtml" />
     <Content Include="Views\Employee\Edit.cshtml" />
     <Content Include="Views\Employee\Index.cshtml" />
+    <Content Include="Views\GeneralCategory\Create.cshtml" />
+    <Content Include="Views\GeneralCategory\Delete.cshtml" />
+    <Content Include="Views\GeneralCategory\Details.cshtml" />
+    <Content Include="Views\GeneralCategory\Edit.cshtml" />
+    <Content Include="Views\GeneralCategory\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
