@@ -236,7 +236,9 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AssetLocationController.cs" />
+
     <Compile Include="Controllers\AssetPurchaseDetailController.cs" />
+
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\DepartmentController.cs" />
     <Compile Include="Controllers\DesignationController.cs" />
@@ -295,6 +297,7 @@
     <Content Include="Views\Category\Details.cshtml" />
     <Content Include="Views\Category\Edit.cshtml" />
     <Content Include="Views\Category\Index.cshtml" />
+
     <Content Include="Views\SubCategory\Create.cshtml" />
     <Content Include="Views\SubCategory\Delete.cshtml" />
     <Content Include="Views\SubCategory\Details.cshtml" />
@@ -315,6 +318,7 @@
     <Content Include="Views\AssetPurchase\Details.cshtml" />
     <Content Include="Views\AssetPurchase\Edit.cshtml" />
     <Content Include="Views\AssetPurchase\Index.cshtml" />
+
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
