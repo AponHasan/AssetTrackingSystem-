@@ -11,9 +11,11 @@ namespace AssetTracking.Models.Models
     {
         public int GeneralCategoryID { get; set; }
         [Required]
+        [Display(Name = "General Category Name")]
         public string GeneralCategoryName { get; set; }
 
         [Required]
+        [Display(Name = "General Category Code")]
         public string GeneralCategoryCode { get; set; }
 
         public virtual ICollection<Category> Categories { get; set; }

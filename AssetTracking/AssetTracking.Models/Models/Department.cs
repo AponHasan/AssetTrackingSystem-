@@ -10,9 +10,13 @@ namespace AssetTracking.Models.Models
     public class Department
     {
         public int DepartmentID { get; set; }
+
         [Required]
+        [Display(Name = "Organization Branch")]
         public int OrganizationBranchID { get; set; }
+
         [Required]
+        [Display(Name = "Department Name")]
         public string DepartmentName { get; set; }
 
         public virtual OrganizationBranch OrganizationBranch { get; set; }

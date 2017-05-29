@@ -13,6 +13,7 @@ namespace AssetTracking.Models.Models
         public int WarrantyPeriodUnitID { get; set; }
 
         [Required]
+        [Display(Name = "Warranty Period Unit Name")]
         public string WarrantyPeriodUnitName { get; set; }
     }
 }

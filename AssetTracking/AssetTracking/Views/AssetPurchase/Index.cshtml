@@ -1,0 +1,94 @@
+﻿@model IEnumerable<AssetTracking.Models.Models.AssetPurchaseDetail>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.VendorID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductCategoryID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WarrantyPeriodUnitID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OrganizationBranchID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Quantity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UnitPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsWarranty)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WarrantyPeriod)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SerialNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PurchasedOn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PurchasedBy)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.VendorID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProductCategoryID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WarrantyPeriodUnitID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OrganizationBranchID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Quantity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UnitPrice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsWarranty)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WarrantyPeriod)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SerialNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PurchasedOn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PurchasedBy)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.AssetPurchaseDetailID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.AssetPurchaseDetailID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.AssetPurchaseDetailID })
+        </td>
+    </tr>
+}
+
+</table>

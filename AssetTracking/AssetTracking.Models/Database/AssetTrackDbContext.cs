@@ -26,11 +26,16 @@ namespace AssetTracking.Models.Database
         public DbSet<GeneralCategory> GeneralCategories { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<SubCategory> SubCategories { get; set; }
+        public DbSet<DetailCategory> DetailCategories { get; set; }
         public DbSet<Vendor> Vendors { get; set; }
         public DbSet<Designation> Designations { get; set; }
         public DbSet<Department> Departments { get; set; }
         public DbSet<Employee> Employees { get; set; }
+        public DbSet<AssetPurchaseHeader> AssetPurchaseHeaders { get; set; }
         public DbSet<AssetPurchaseDetail> AssetPurchaseDetails { get; set; }
+        public DbSet<AssetPurchaseSerialNumber> AssetPurchaseSerialNumbers { get; set; }
+        public DbSet<AssetPurchaseDetailSerialNumber> AssetPurchaseDetailSerialNumbers { get; set; }
+        public DbSet<WarrantyPeriodUnit> WarrantyPeriodUnits { get; set; }
 
     }
 }

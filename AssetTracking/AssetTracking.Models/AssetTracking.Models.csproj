@@ -50,6 +50,7 @@
     <Compile Include="Interfaces\BaseInterface\ICommonRepository.cs" />
     <Compile Include="Interfaces\BaseInterface\IManager.cs" />
     <Compile Include="Interfaces\IModelManager\IAssetLocationManager.cs" />
+    <Compile Include="Interfaces\IModelManager\IAssetPurchaseDetailManager.cs" />
     <Compile Include="Interfaces\IModelManager\ICategoryManager.cs" />
     <Compile Include="Interfaces\IModelManager\IDepartmentManager.cs" />
     <Compile Include="Interfaces\IModelManager\IDesignationManager.cs" />
@@ -57,7 +58,11 @@
     <Compile Include="Interfaces\IModelManager\IGeneralCategoryManager.cs" />
     <Compile Include="Interfaces\IModelManager\IOrganizationBranchManager.cs" />
     <Compile Include="Interfaces\IModelManager\IOrganizationManager.cs" />
+    <Compile Include="Interfaces\IModelManager\ISubCategoryManager.cs" />
+    <Compile Include="Interfaces\IModelManager\IVendorManager.cs" />
+    <Compile Include="Interfaces\IModelManager\IWarrantyPeriodUnitManager.cs" />
     <Compile Include="Interfaces\IModelRepository\IAssetLocationRepository.cs" />
+    <Compile Include="Interfaces\IModelRepository\IAssetPurchaseDetailRepository.cs" />
     <Compile Include="Interfaces\IModelRepository\ICategoryRepogitory.cs" />
     <Compile Include="Interfaces\IModelRepository\IDepartmentRepository.cs" />
     <Compile Include="Interfaces\IModelRepository\IDesignationRepository.cs" />
@@ -65,11 +70,27 @@
     <Compile Include="Interfaces\IModelRepository\IGeneralCategoryRepository.cs" />
     <Compile Include="Interfaces\IModelRepository\IOrganizationBranchRepository.cs" />
     <Compile Include="Interfaces\IModelRepository\IOrganizationRepository.cs" />
+    <Compile Include="Interfaces\IModelRepository\ISubCategoryRepository.cs" />
+    <Compile Include="Interfaces\IModelRepository\IVendorRepository.cs" />
+    <Compile Include="Interfaces\IModelRepository\IWarrantyPeriodUnitRepository.cs" />
+    <Compile Include="Migrations\201705292155069_InitialMigration.cs" />
+    <Compile Include="Migrations\201705292155069_InitialMigration.Designer.cs">
+      <DependentUpon>201705292155069_InitialMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705292225328_AddDisplayName.cs" />
+    <Compile Include="Migrations\201705292225328_AddDisplayName.Designer.cs">
+      <DependentUpon>201705292225328_AddDisplayName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AssetLocation.cs" />
     <Compile Include="Models\AssetPurchaseDetail.cs" />
+    <Compile Include="Models\AssetPurchaseDetailSerialNumber.cs" />
+    <Compile Include="Models\AssetPurchaseHeader.cs" />
+    <Compile Include="Models\AssetPurchaseSerialNumber.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Department.cs" />
     <Compile Include="Models\Designation.cs" />
+    <Compile Include="Models\DetailCategory.cs" />
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\GeneralCategory.cs" />
     <Compile Include="Models\Organization.cs" />
@@ -79,10 +100,17 @@
     <Compile Include="Models\WarrantyPeriodUnit.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201705292155069_InitialMigration.resx">
+      <DependentUpon>201705292155069_InitialMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705292225328_AddDisplayName.resx">
+      <DependentUpon>201705292225328_AddDisplayName.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
