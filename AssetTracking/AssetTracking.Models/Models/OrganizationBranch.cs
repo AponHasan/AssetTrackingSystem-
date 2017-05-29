@@ -11,11 +11,17 @@ namespace AssetTracking.Models.Models
     {
      
         public int OrganizationBranchID { get; set; }
+
         [Required]
+        [Display(Name = "Organization")]
         public int OrganizationID { get; set; }
+
         [Required]
+        [Display(Name = "Organization Branch Name")]
         public string OrganizationBranchName { get; set; }
+
         [Required]
+        [Display(Name = "Organization Branch Short Name")]
         public string OrganizatioBranchShortName { get; set; }
 
         public virtual Organization Organization { get; set; }

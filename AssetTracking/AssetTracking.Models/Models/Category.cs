@@ -11,16 +11,25 @@ namespace AssetTracking.Models.Models
     public class Category
     {
         public int CategoryID { get; set; }
-        [Required]    
+        [Required]
+        [Display(Name = "General Category")]
         public int GeneralCategoryID { get; set; }
 
         [Required]
+        [Column(TypeName = "VARCHAR")]
+        [StringLength(150)]
+        [Display(Name = "Name")]
         public string CategoryName { get; set; }
 
         [Required]
+        [Column(TypeName = "VARCHAR")]
+        [StringLength(3, MinimumLength = 3)]
+        [Display(Name = "Code")]
         public string CategoryCode { get; set; }
 
         [Required]
+        [Column(TypeName = "VARCHAR")]
+        [Display(Name = "Description")]
         public string CategoryDescription { get; set; }
 
         public virtual GeneralCategory GeneralCategory { get; set; }

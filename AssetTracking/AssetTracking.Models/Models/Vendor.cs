@@ -12,6 +12,7 @@ namespace AssetTracking.Models.Models
         public int VendorID { get; set; }
 
         [Required]
+        [Display(Name = "Vendor Name")]
         public string VendorName { get; set; }
     }
 }

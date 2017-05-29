@@ -14,6 +14,7 @@ namespace AssetTracking.Models.Models
         public int DesignationID { get; set; }
 
         [Required]
+        [Display(Name = "Designation Name")]
        public string DesignationName { get; set; }
 
         public virtual ICollection<Employee> Employees { get; set; }

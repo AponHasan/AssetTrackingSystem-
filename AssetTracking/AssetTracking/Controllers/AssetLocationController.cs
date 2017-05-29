@@ -11,7 +11,7 @@ using AssetTracking.Models.Models;
 using AssetTracking.Models.Database;
 using AssetTracking.Models.Interfaces.IModelManager;
 
-namespace AssetTracking.Controllers
+namespace AssetTracking.Areas.Admin.Controllers
 {
     public class AssetLocationController : Controller
     {
