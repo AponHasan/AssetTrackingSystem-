@@ -77,6 +77,10 @@
     <Compile Include="Migrations\201705301829216_InitialMigration.Designer.cs">
       <DependentUpon>201705301829216_InitialMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705301918367_modifyAssetPurchaseDetail.cs" />
+    <Compile Include="Migrations\201705301918367_modifyAssetPurchaseDetail.Designer.cs">
+      <DependentUpon>201705301918367_modifyAssetPurchaseDetail.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AssetLocation.cs" />
     <Compile Include="Models\AssetPurchaseDetail.cs" />
@@ -103,6 +107,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201705301829216_InitialMigration.resx">
       <DependentUpon>201705301829216_InitialMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705301918367_modifyAssetPurchaseDetail.resx">
+      <DependentUpon>201705301918367_modifyAssetPurchaseDetail.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

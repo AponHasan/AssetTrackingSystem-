@@ -16,9 +16,13 @@ namespace AssetTracking.Models.Models
         [Display(Name = "Asset Purchase Header")]
         public int AssetPurchaseHeaderID { get; set; }
 
+        //[Required]
+        //[Display(Name = "Product Category")]
+        //public int CategoryID { get; set; }
+
         [Required]
-        [Display(Name = "Product Category")]
-        public int CategoryID { get; set; }
+        [Display(Name = "Sub Category")]
+        public int SubCategoryID { get; set; }
 
         [Required]
         [Display(Name = "Quantity")]
@@ -39,8 +43,9 @@ namespace AssetTracking.Models.Models
         public double WarrantyPeriodUnitID { get; set; }
 
         public virtual WarrantyPeriodUnit WarrantyPeriodUnit { get; set; }
-        public virtual AssetPurchaseHeader AssetPurchaseHeader { get; set; }       
-        public virtual Category Category { get; set; }
+        public virtual AssetPurchaseHeader AssetPurchaseHeader { get; set; }
+        public virtual SubCategory SubCategory { get; set; }
+        //public virtual Category Category { get; set; }
         public virtual ICollection<AssetPurchaseDetailSerialNumber> AssetPurchaseDetailSerialNumbers { get; set; }
     }
 }
