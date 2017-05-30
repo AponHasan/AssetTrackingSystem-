@@ -13,8 +13,8 @@ namespace AssetTracking.Models.Migrations
                     {
                         AssetLocationID = c.Int(nullable: false, identity: true),
                         OrganizationBranchID = c.Int(nullable: false),
-                        AssetLocationName = c.String(),
-                        ShortName = c.String(),
+                        AssetLocationName = c.String(nullable: false),
+                        ShortName = c.String(nullable: false),
                     })
                 .PrimaryKey(t => t.AssetLocationID)
                 .ForeignKey("dbo.OrganizationBranch", t => t.OrganizationBranchID, cascadeDelete: true)

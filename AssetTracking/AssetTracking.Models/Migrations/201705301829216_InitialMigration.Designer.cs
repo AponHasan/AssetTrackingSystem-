@@ -7,13 +7,13 @@ namespace AssetTracking.Models.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class AddDisplayName : IMigrationMetadata
+    public sealed partial class InitialMigration : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddDisplayName));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialMigration));
         
         string IMigrationMetadata.Id
         {
-            get { return "201705292225328_AddDisplayName"; }
+            get { return "201705301829216_InitialMigration"; }
         }
         
         string IMigrationMetadata.Source
