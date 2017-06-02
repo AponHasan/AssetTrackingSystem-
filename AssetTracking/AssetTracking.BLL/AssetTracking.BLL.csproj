@@ -43,7 +43,6 @@
     <Compile Include="AssetPurchaseDetailManager.cs" />
     <Compile Include="AssetPurchaseDetailSerialNumberManager.cs" />
     <Compile Include="AssetPurchaseHeaderManager.cs" />
-    <Compile Include="AssetPurchaseSerialNumberManager.cs" />
     <Compile Include="CategoryManager.cs" />
     <Compile Include="DepartmentManager.cs" />
     <Compile Include="DesignationManager.cs" />

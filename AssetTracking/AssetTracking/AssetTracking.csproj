@@ -240,7 +240,6 @@
     <Compile Include="Controllers\AssetPurchaseDetailController.cs" />
     <Compile Include="Controllers\AssetPurchaseDetailSerialNumbeController.cs" />
     <Compile Include="Controllers\AssetPurchaseHeaderController.cs" />
-    <Compile Include="Controllers\AssetPurchaseSerialNumberController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\DepartmentController.cs" />
     <Compile Include="Controllers\DesignationController.cs" />
@@ -335,11 +334,6 @@
     <Content Include="Views\AssetPurchaseDetailSerialNumbe\Details.cshtml" />
     <Content Include="Views\AssetPurchaseDetailSerialNumbe\Edit.cshtml" />
     <Content Include="Views\AssetPurchaseDetailSerialNumbe\Index.cshtml" />
-    <Content Include="Views\AssetPurchaseSerialNumber\Create.cshtml" />
-    <Content Include="Views\AssetPurchaseSerialNumber\Delete.cshtml" />
-    <Content Include="Views\AssetPurchaseSerialNumber\Details.cshtml" />
-    <Content Include="Views\AssetPurchaseSerialNumber\Edit.cshtml" />
-    <Content Include="Views\AssetPurchaseSerialNumber\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

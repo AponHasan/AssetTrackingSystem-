@@ -53,7 +53,6 @@
     <Compile Include="Interfaces\IModelManager\IAssetPurchaseDetailManager.cs" />
     <Compile Include="Interfaces\IModelManager\IAssetPurchaseDetailSerialNumberManager.cs" />
     <Compile Include="Interfaces\IModelManager\IAssetPurchaseHeaderManager.cs" />
-    <Compile Include="Interfaces\IModelManager\IAssetPurchaseSerialNumberManager.cs" />
     <Compile Include="Interfaces\IModelManager\ICategoryManager.cs" />
     <Compile Include="Interfaces\IModelManager\IDepartmentManager.cs" />
     <Compile Include="Interfaces\IModelManager\IDesignationManager.cs" />
@@ -69,7 +68,6 @@
     <Compile Include="Interfaces\IModelRepository\IAssetPurchaseDetailRepository.cs" />
     <Compile Include="Interfaces\IModelRepository\IAssetPurchaseDetailSerialNumberRepository.cs" />
     <Compile Include="Interfaces\IModelRepository\IAssetPurchaseHeaderRepository.cs" />
-    <Compile Include="Interfaces\IModelRepository\IAssetPurchaseSerialNumberRepository.cs" />
     <Compile Include="Interfaces\IModelRepository\ICategoryRepogitory.cs" />
     <Compile Include="Interfaces\IModelRepository\IDepartmentRepository.cs" />
     <Compile Include="Interfaces\IModelRepository\IDesignationRepository.cs" />
@@ -89,12 +87,15 @@
     <Compile Include="Migrations\201705301918367_modifyAssetPurchaseDetail.Designer.cs">
       <DependentUpon>201705301918367_modifyAssetPurchaseDetail.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706022012565_deleteModelClass.cs" />
+    <Compile Include="Migrations\201706022012565_deleteModelClass.Designer.cs">
+      <DependentUpon>201706022012565_deleteModelClass.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AssetLocation.cs" />
     <Compile Include="Models\AssetPurchaseDetail.cs" />
     <Compile Include="Models\AssetPurchaseDetailSerialNumber.cs" />
     <Compile Include="Models\AssetPurchaseHeader.cs" />
-    <Compile Include="Models\AssetPurchaseSerialNumber.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Department.cs" />
     <Compile Include="Models\Designation.cs" />
@@ -118,6 +119,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201705301918367_modifyAssetPurchaseDetail.resx">
       <DependentUpon>201705301918367_modifyAssetPurchaseDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706022012565_deleteModelClass.resx">
+      <DependentUpon>201706022012565_deleteModelClass.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

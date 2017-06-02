@@ -33,7 +33,7 @@ namespace AssetTracking.Models.Database
         public DbSet<Employee> Employees { get; set; }
         public DbSet<AssetPurchaseHeader> AssetPurchaseHeaders { get; set; }
         public DbSet<AssetPurchaseDetail> AssetPurchaseDetails { get; set; }
-        public DbSet<AssetPurchaseSerialNumber> AssetPurchaseSerialNumbers { get; set; }
+        
         public DbSet<AssetPurchaseDetailSerialNumber> AssetPurchaseDetailSerialNumbers { get; set; }
         public DbSet<WarrantyPeriodUnit> WarrantyPeriodUnits { get; set; }
 
