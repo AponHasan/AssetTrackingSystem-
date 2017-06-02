@@ -21,21 +21,7 @@
         <th>
             @Html.DisplayNameFor(model => model.PurchasedOn)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PurchasedBy)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CreatedBy)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CreatedOn)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.LastModifiedBy)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.LastModifiedOn)
-        </th>
+
         <th></th>
     </tr>
 
@@ -50,21 +36,8 @@
         <td>
             @Html.DisplayFor(modelItem => item.PurchasedOn)
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PurchasedBy)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CreatedBy)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CreatedOn)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.LastModifiedBy)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.LastModifiedOn)
-        </td>
+
+
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.AssetPurchaseHeaderID }) |
             @Html.ActionLink("Details", "Details", new { id=item.AssetPurchaseHeaderID }) |

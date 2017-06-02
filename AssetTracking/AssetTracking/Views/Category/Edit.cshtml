@@ -20,6 +20,7 @@
             @Html.LabelFor(model => model.GeneralCategoryID, "GeneralCategoryID", new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("GeneralCategoryID", String.Empty)
+               @* @Html.TextBoxFor(model => model.GeneralCategory.GeneralCategoryName,new {@readonly="true"})*@
                 @Html.ValidationMessageFor(model => model.GeneralCategoryID)
             </div>
         </div>

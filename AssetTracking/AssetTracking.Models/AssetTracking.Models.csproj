@@ -91,6 +91,14 @@
     <Compile Include="Migrations\201706022012565_deleteModelClass.Designer.cs">
       <DependentUpon>201706022012565_deleteModelClass.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706022037379_remodifyallModelclass.cs" />
+    <Compile Include="Migrations\201706022037379_remodifyallModelclass.Designer.cs">
+      <DependentUpon>201706022037379_remodifyallModelclass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706022047011_PurchaseModelClassModifyall.cs" />
+    <Compile Include="Migrations\201706022047011_PurchaseModelClassModifyall.Designer.cs">
+      <DependentUpon>201706022047011_PurchaseModelClassModifyall.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AssetLocation.cs" />
     <Compile Include="Models\AssetPurchaseDetail.cs" />
@@ -122,6 +130,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706022012565_deleteModelClass.resx">
       <DependentUpon>201706022012565_deleteModelClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706022037379_remodifyallModelclass.resx">
+      <DependentUpon>201706022037379_remodifyallModelclass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706022047011_PurchaseModelClassModifyall.resx">
+      <DependentUpon>201706022047011_PurchaseModelClassModifyall.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

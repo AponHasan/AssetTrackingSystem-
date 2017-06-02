@@ -20,18 +20,11 @@ namespace AssetTracking.Models.Models
         [Display(Name = "Purchased Date")]
         public DateTime PurchasedOn { get; set; }
 
-        [Required]
-        [Display(Name = "Purchased By")]
-        public int PurchasedBy { get; set; }
-
         [Display(Name = "Organization Branch")]
         public int OrganizationBranchID { get; set; }
 
-        public OrganizationBranch OrganizationBranch { get; set; }
-        public ICollection<AssetPurchaseDetail> AssetPurchaseDetails { get; set; }
-        public int CreatedBy { get; set; }
-        public DateTime CreatedOn { get; set; }
-        public int? LastModifiedBy { get; set; }
-        public DateTime? LastModifiedOn { get; set; }
+        public virtual OrganizationBranch OrganizationBranch { get; set; }
+        public virtual Vendor Vendor { get; set; }
+        public ICollection<AssetPurchaseDetail> AssetPurchaseDetails { get; set; }            
     }
 }
