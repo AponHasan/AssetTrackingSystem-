@@ -18,7 +18,7 @@ namespace AssetTracking.Models.Models
         public int CategoryID { get; set; }
 
         [Required]
-        [Display(Name = "Name")]
+        [Display(Name = "Sub Category Name")]
         [Column(TypeName = "VARCHAR")]
         [StringLength(150)]
         public string SubCategoryName { get; set; }

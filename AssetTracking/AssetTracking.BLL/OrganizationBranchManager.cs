@@ -49,5 +49,13 @@ namespace AssetTracking.BLL
         {
             return _organizationBranchRepository.GetAll();
         }
+
+        //public ICollection<Organization> GetByOrganization(int organizationID)
+        //{
+
+
+        //    var organization = GetAll().AsQueryable().Where(o => o.OrganizationID == organizationID);
+        //    return organization.ToList();
+        //}
     }
 }

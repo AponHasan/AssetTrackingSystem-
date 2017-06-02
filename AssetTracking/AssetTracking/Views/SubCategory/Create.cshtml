@@ -16,9 +16,21 @@
         @Html.ValidationSummary(true)
 
         <div class="form-group">
+            @Html.LabelFor(model => model.Category.GeneralCategory.GeneralCategoryID, "GeneralCategoryID", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @*@Html.DropDownList("GeneralCategoryID", String.Empty)
+                <div class="col-md-10">*@
+                    @Html.DropDownList("GeneralCategoryID", ViewBag.generalCategoryID as SelectList, "Select General Category", htmlAttributes: new { @class = "" })
+                
+                @Html.ValidationMessageFor(model => model.CategoryID)
+            </div>
+        </div>
+        
+
+        <div class="form-group">
             @Html.LabelFor(model => model.CategoryID, "CategoryID", new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("CategoryID", String.Empty)
+                @Html.DropDownList("CategoryID", new SelectList(new List<SelectListItem>()),"Select Category", htmlAttributes: new { @class = "" })
                 @Html.ValidationMessageFor(model => model.CategoryID)
             </div>
         </div>
@@ -58,3 +70,6 @@
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>
+@section scripts{    
+    <script src="~/Scripts/SubCategory/Create.js"></script> 
+}

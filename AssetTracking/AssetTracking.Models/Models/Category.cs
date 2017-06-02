@@ -18,7 +18,7 @@ namespace AssetTracking.Models.Models
         [Required]
         [Column(TypeName = "VARCHAR")]
         [StringLength(150)]
-        [Display(Name = "Name")]
+        [Display(Name = "Category Name")]
         public string CategoryName { get; set; }
 
         [Required]

@@ -1,0 +1,52 @@
+﻿@model IEnumerable<AssetTracking.Models.Models.DetailCategory>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SubCategory.SubCategoryName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DetailCategoryName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DetailCategoryCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DetailCategoryDescription)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.SubCategory.SubCategoryName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DetailCategoryName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DetailCategoryCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DetailCategoryDescription)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.DetailCategoryID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.DetailCategoryID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.DetailCategoryID })
+        </td>
+    </tr>
+}
+
+</table>

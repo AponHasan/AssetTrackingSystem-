@@ -17,12 +17,14 @@ namespace AssetTracking.Controllers
         private AssetTrackDbContext db = new AssetTrackDbContext();
         private SubCategoryManager _subCategoryManager;
         private CategoryManager _categoryManager;
+        private GeneralCategoryManager _generalCategoryManager;
 
 
         public SubCategoryController()
         {
             _subCategoryManager = new SubCategoryManager();
             _categoryManager = new CategoryManager();
+            _generalCategoryManager = new GeneralCategoryManager();
         }
         // GET: /SubCategory/
         public ActionResult Index()
@@ -51,6 +53,9 @@ namespace AssetTracking.Controllers
         // GET: /SubCategory/Create
         public ActionResult Create()
         {
+            var generalCategoryList = _generalCategoryManager.GetAll();
+            ViewBag.generalCategoryID = new SelectList(generalCategoryList, "GeneralCategoryID", "GeneralCategoryName");
+            
             var categoryList = _categoryManager.GetAll();
             ViewBag.CategoryID = new SelectList(categoryList, "CategoryID", "CategoryName");
             return View();

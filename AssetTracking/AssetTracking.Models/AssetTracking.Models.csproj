@@ -51,9 +51,13 @@
     <Compile Include="Interfaces\BaseInterface\IManager.cs" />
     <Compile Include="Interfaces\IModelManager\IAssetLocationManager.cs" />
     <Compile Include="Interfaces\IModelManager\IAssetPurchaseDetailManager.cs" />
+    <Compile Include="Interfaces\IModelManager\IAssetPurchaseDetailSerialNumberManager.cs" />
+    <Compile Include="Interfaces\IModelManager\IAssetPurchaseHeaderManager.cs" />
+    <Compile Include="Interfaces\IModelManager\IAssetPurchaseSerialNumberManager.cs" />
     <Compile Include="Interfaces\IModelManager\ICategoryManager.cs" />
     <Compile Include="Interfaces\IModelManager\IDepartmentManager.cs" />
     <Compile Include="Interfaces\IModelManager\IDesignationManager.cs" />
+    <Compile Include="Interfaces\IModelManager\IDetailCategoryManager.cs" />
     <Compile Include="Interfaces\IModelManager\IEmployeeManager.cs" />
     <Compile Include="Interfaces\IModelManager\IGeneralCategoryManager.cs" />
     <Compile Include="Interfaces\IModelManager\IOrganizationBranchManager.cs" />
@@ -63,9 +67,13 @@
     <Compile Include="Interfaces\IModelManager\IWarrantyPeriodUnitManager.cs" />
     <Compile Include="Interfaces\IModelRepository\IAssetLocationRepository.cs" />
     <Compile Include="Interfaces\IModelRepository\IAssetPurchaseDetailRepository.cs" />
+    <Compile Include="Interfaces\IModelRepository\IAssetPurchaseDetailSerialNumberRepository.cs" />
+    <Compile Include="Interfaces\IModelRepository\IAssetPurchaseHeaderRepository.cs" />
+    <Compile Include="Interfaces\IModelRepository\IAssetPurchaseSerialNumberRepository.cs" />
     <Compile Include="Interfaces\IModelRepository\ICategoryRepogitory.cs" />
     <Compile Include="Interfaces\IModelRepository\IDepartmentRepository.cs" />
     <Compile Include="Interfaces\IModelRepository\IDesignationRepository.cs" />
+    <Compile Include="Interfaces\IModelRepository\IDetailCategoryRepository.cs" />
     <Compile Include="Interfaces\IModelRepository\IEmployeeRepository.cs" />
     <Compile Include="Interfaces\IModelRepository\IGeneralCategoryRepository.cs" />
     <Compile Include="Interfaces\IModelRepository\IOrganizationBranchRepository.cs" />

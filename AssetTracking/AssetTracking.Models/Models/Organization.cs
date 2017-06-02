@@ -10,7 +10,6 @@ namespace AssetTracking.Models.Models
     public class Organization
     {
 
-    
         public int OrganizationID { get; set; }
         [Required]
         [Display(Name = "Organization Name")]
@@ -25,6 +24,7 @@ namespace AssetTracking.Models.Models
         public string OrganizationLocation { get; set; }
 
         public virtual ICollection<OrganizationBranch> OrganizationBranches { get; set; }
+        
     }
 
 }

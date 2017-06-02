@@ -227,6 +227,7 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\SubCategory\Create.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -236,9 +237,14 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AssetLocationController.cs" />
+    <Compile Include="Controllers\AssetPurchaseDetailController.cs" />
+    <Compile Include="Controllers\AssetPurchaseDetailSerialNumbeController.cs" />
+    <Compile Include="Controllers\AssetPurchaseHeaderController.cs" />
+    <Compile Include="Controllers\AssetPurchaseSerialNumberController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\DepartmentController.cs" />
     <Compile Include="Controllers\DesignationController.cs" />
+    <Compile Include="Controllers\DetailCategoryController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\GeneralCategoryController.cs" />
     <Compile Include="Controllers\OrganizationBranchController.cs" />
@@ -309,6 +315,31 @@
     <Content Include="Views\Vendor\Details.cshtml" />
     <Content Include="Views\Vendor\Edit.cshtml" />
     <Content Include="Views\Vendor\Index.cshtml" />
+    <Content Include="Views\DetailCategory\Create.cshtml" />
+    <Content Include="Views\DetailCategory\Delete.cshtml" />
+    <Content Include="Views\DetailCategory\Details.cshtml" />
+    <Content Include="Views\DetailCategory\Edit.cshtml" />
+    <Content Include="Views\DetailCategory\Index.cshtml" />
+    <Content Include="Views\AssetPurchaseHeader\Create.cshtml" />
+    <Content Include="Views\AssetPurchaseHeader\Delete.cshtml" />
+    <Content Include="Views\AssetPurchaseHeader\Details.cshtml" />
+    <Content Include="Views\AssetPurchaseHeader\Edit.cshtml" />
+    <Content Include="Views\AssetPurchaseHeader\Index.cshtml" />
+    <Content Include="Views\AssetPurchaseDetail\Create.cshtml" />
+    <Content Include="Views\AssetPurchaseDetail\Delete.cshtml" />
+    <Content Include="Views\AssetPurchaseDetail\Details.cshtml" />
+    <Content Include="Views\AssetPurchaseDetail\Edit.cshtml" />
+    <Content Include="Views\AssetPurchaseDetail\Index.cshtml" />
+    <Content Include="Views\AssetPurchaseDetailSerialNumbe\Create.cshtml" />
+    <Content Include="Views\AssetPurchaseDetailSerialNumbe\Delete.cshtml" />
+    <Content Include="Views\AssetPurchaseDetailSerialNumbe\Details.cshtml" />
+    <Content Include="Views\AssetPurchaseDetailSerialNumbe\Edit.cshtml" />
+    <Content Include="Views\AssetPurchaseDetailSerialNumbe\Index.cshtml" />
+    <Content Include="Views\AssetPurchaseSerialNumber\Create.cshtml" />
+    <Content Include="Views\AssetPurchaseSerialNumber\Delete.cshtml" />
+    <Content Include="Views\AssetPurchaseSerialNumber\Details.cshtml" />
+    <Content Include="Views\AssetPurchaseSerialNumber\Edit.cshtml" />
+    <Content Include="Views\AssetPurchaseSerialNumber\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

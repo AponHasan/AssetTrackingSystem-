@@ -7,9 +7,7 @@ using AssetTracking.Models.Models;
 
 namespace AssetTracking.Models.Interfaces.IModelManager
 {
-    public interface IOrganizationBranchManager : IManager<OrganizationBranch>
+    public interface IAssetPurchaseHeaderManager : IManager<AssetPurchaseHeader>
     {
-        //ICollection<Organization> GetByOrganization(int organizationID);
     }
-
 }

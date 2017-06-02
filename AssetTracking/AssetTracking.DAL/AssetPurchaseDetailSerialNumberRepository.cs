@@ -10,9 +10,9 @@ using AssetTracking.Models.Models;
 
 namespace AssetTracking.DAL
 {
-    public class CategoryRepository : CommonRepository<Category>,ICategoryRepogitory
+    public class AssetPurchaseDetailSerialNumberRepository : CommonRepository<AssetPurchaseDetailSerialNumber>, IAssetPurchaseDetailSerialNumberRepository
     {
-        public CategoryRepository() 
+        public AssetPurchaseDetailSerialNumberRepository() 
             : base(new AssetTrackDbContext())
         {
         }

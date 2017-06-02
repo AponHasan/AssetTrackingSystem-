@@ -1,0 +1,35 @@
+﻿@model AssetTracking.Models.Models.AssetPurchaseDetailSerialNumber
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>AssetPurchaseDetailSerialNumber</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PerchaseDetailID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PerchaseDetailID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SerialNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SerialNumber)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.AssetPurchaseDetailSerialNumberID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

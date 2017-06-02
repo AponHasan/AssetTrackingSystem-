@@ -47,5 +47,11 @@ namespace AssetTracking.BLL
         {
             return _categoryRepository.GetAll();
         }
+
+        public ICollection<Category> GetCategorysByGeneralCateogry(long gcategoryId)
+        {
+            var category = GetAll().AsQueryable().Where(c => c.GeneralCategoryID == gcategoryId);
+            return category.ToList();
+        }
     }
 }

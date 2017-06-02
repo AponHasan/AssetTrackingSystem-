@@ -48,10 +48,14 @@
   <ItemGroup>
     <Compile Include="AssetLocationRepository.cs" />
     <Compile Include="AssetPurchaseDetailRepository.cs" />
+    <Compile Include="AssetPurchaseDetailSerialNumberRepository.cs" />
+    <Compile Include="AssetPurchaseHeaderRepository.cs" />
+    <Compile Include="AssetPurchaseSerialNumberRepository.cs" />
     <Compile Include="CategoryRepository.cs" />
     <Compile Include="CommonRepository.cs" />
     <Compile Include="DepartmentRepository.cs" />
     <Compile Include="DesignationRepository.cs" />
+    <Compile Include="DetailCategoryRepository.cs" />
     <Compile Include="EmployeeRepository.cs" />
     <Compile Include="GeneralCategoryRepository.cs" />
     <Compile Include="OrganizationBranchRepository.cs" />

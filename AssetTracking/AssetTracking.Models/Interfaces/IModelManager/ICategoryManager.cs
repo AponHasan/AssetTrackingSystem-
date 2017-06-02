@@ -9,5 +9,6 @@ namespace AssetTracking.Models.Interfaces.IModelManager
 {
     public interface ICategoryManager : IManager<Category>
     {
+        ICollection<Category> GetCategorysByGeneralCateogry(long gcategoryId);
     }
 }

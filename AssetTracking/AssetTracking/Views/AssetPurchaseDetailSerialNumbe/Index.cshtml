@@ -1,0 +1,40 @@
+﻿@model IEnumerable<AssetTracking.Models.Models.AssetPurchaseDetailSerialNumber>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PerchaseDetailID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SerialNumber)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.PerchaseDetailID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SerialNumber)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.AssetPurchaseDetailSerialNumberID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.AssetPurchaseDetailSerialNumberID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.AssetPurchaseDetailSerialNumberID })
+        </td>
+    </tr>
+}
+
+</table>

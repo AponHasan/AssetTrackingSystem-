@@ -1,0 +1,51 @@
+﻿@model AssetTracking.Models.Models.DetailCategory
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>DetailCategory</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SubCategory.SubCategoryName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SubCategory.SubCategoryName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DetailCategoryName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DetailCategoryName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DetailCategoryCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DetailCategoryCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DetailCategoryDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DetailCategoryDescription)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.DetailCategoryID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
