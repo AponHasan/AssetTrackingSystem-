@@ -1,40 +1,64 @@
 ﻿@model IEnumerable<AssetTracking.Models.Models.AssetPurchaseDetailSerialNumber>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Asset Purchase Detail Serial Number";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.PerchaseDetailID)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SerialNumber)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.PerchaseDetailID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SerialNumber)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.AssetPurchaseDetailSerialNumberID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.AssetPurchaseDetailSerialNumberID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.AssetPurchaseDetailSerialNumberID })
-        </td>
-    </tr>
-}
-
-</table>
+<div class="row">
+    <div class="col-md-12">
+        <!-- BEGIN TABLE PORTLET-->
+        <div class="portlet box green">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="fa fa-comments"></i>Asset Purchase Detail Serial Number Index
+                </div>
+                <div class="tools">
+                    <a href="javascript:;" class="collapse"> </a>
+                    <a href="#portlet-config" data-toggle="modal" class="config"> </a>
+                    <a href="javascript:;" class="reload"> </a>
+                    <a href="javascript:;" class="remove"> </a>
+                </div>
+            </div>
+            <div class="portlet-body">
+                <p>
+                    @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-sm green-jungle" })
+                </p>
+                <div class="table-scrollable">
+                    <table class="table table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.PerchaseDetailID)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.SerialNumber)
+                                </th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.PerchaseDetailID)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.SerialNumber)
+                                    </td>
+                                    <td>
+                                        @Html.ActionLink("Edit", "Edit", new { id = item.AssetPurchaseDetailSerialNumberID }, new { @class = "label label-sm label-info" }) |
+                                        @Html.ActionLink("Details", "Details", new { id = item.AssetPurchaseDetailSerialNumberID }, new { @class = "label label-sm label-warning" }) |
+                                        @Html.ActionLink("Delete", "Delete", new { id = item.AssetPurchaseDetailSerialNumberID }, new { @class = "label label-sm label-danger" })
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!-- END TABLE PORTLET-->
+    </div>
+</div>

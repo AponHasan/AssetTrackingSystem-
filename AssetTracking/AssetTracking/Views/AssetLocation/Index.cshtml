@@ -1,45 +1,69 @@
 ﻿@model IEnumerable<AssetTracking.Models.Models.AssetLocation>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Asset Location";
 }
 
-<h2>Index</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.OrganizationBranch.OrganizationBranchName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.AssetLocationName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ShortName)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.OrganizationBranch.OrganizationBranchName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.AssetLocationName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ShortName)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.AssetLocationID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.AssetLocationID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.AssetLocationID })
-        </td>
-    </tr>
-}
-
-</table>
+<div class="row">
+    <div class="col-md-12">
+        <!-- BEGIN TABLE PORTLET-->
+        <div class="portlet box green">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="fa fa-comments"></i>Asset Location Index
+                </div>
+                <div class="tools">
+                    <a href="javascript:;" class="collapse"> </a>
+                    <a href="#portlet-config" data-toggle="modal" class="config"> </a>
+                    <a href="javascript:;" class="reload"> </a>
+                    <a href="javascript:;" class="remove"> </a>
+                </div>
+            </div>
+            <div class="portlet-body">
+                <p>
+                    @Html.ActionLink("Create New", "Create", "AssetLocation", null, new { @class = "btn btn-sm green-jungle" })
+                </p>
+                <div class="table-scrollable">
+                    <table class="table table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.OrganizationBranch.OrganizationBranchName)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.AssetLocationName)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.ShortName)
+                                </th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.OrganizationBranch.OrganizationBranchName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.AssetLocationName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.ShortName)
+                                    </td>
+                                    <td>
+                                        @Html.ActionLink("Edit", "Edit", "AssetLocation", new { id = item.AssetLocationID }, new { @class = "label label-sm label-info" }) |
+                                        @Html.ActionLink("Details", "Details", "AssetLocation", new { id = item.AssetLocationID }, new { @class = "label label-sm label-warning" }) |
+                                        @Html.ActionLink("Delete", "Delete", "AssetLocation", new { id = item.AssetLocationID }, new { @class = "label label-sm label-danger" })
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!-- END TABLE PORTLET-->
+    </div>
+</div>
