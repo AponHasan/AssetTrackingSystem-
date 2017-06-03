@@ -1,45 +1,65 @@
 ﻿@model AssetTracking.Models.Models.Department
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Create Department";
 }
-
-<h2>Create</h2>
-
-@using (Html.BeginForm()) 
-{
-    @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>Department</h4>
-        <hr />
-        @Html.ValidationSummary(true)
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.OrganizationBranchID, "OrganizationBranchID", new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("OrganizationBranchID", ViewBag.OrganizationBranchID as SelectList, "Select Organization Branch", htmlAttributes: new { @class = "" })
-                @*@Html.DropDownList("OrganizationBranchID", String.Empty)*@
-                @Html.ValidationMessageFor(model => model.OrganizationBranchID)
-            </div>
+  <!-- BEGIN FORM DESIGN -->
+<div class="portlet box green">
+    <div class="portlet-title">
+        <div class="caption">
+            <i class="fa fa-gift"></i>Create Department
         </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.DepartmentName, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.DepartmentName)
-                @Html.ValidationMessageFor(model => model.DepartmentName)
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
-            </div>
+        <div class="tools">
+            <a href="javascript:;" class="collapse"> </a>
+            <a href="#portlet-config" data-toggle="modal" class="config"> </a>
+            <a href="javascript:;" class="reload"> </a>
+            <a href="javascript:;" class="remove"> </a>
         </div>
     </div>
-}
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
+    <div class="portlet-body form">
+        
+        <!-- BEGIN FORM-->
+        @using (Html.BeginForm("Create", "Department", FormMethod.Post, new { @class = "form-horizontal" }))
+        {
+            @Html.AntiForgeryToken()
+            <div class="form-body">
+                <div class="form-group">
+                    <label class="col-md-3 control-label">Organization Branch</label>
+                    <div class="col-md-4">
+                        @Html.ValidationSummary(true)
+                        <div class="input-group">
+                            <span class="input-group-addon input-circle-left">
+                                <i class="fa fa-building-o" aria-hidden="true"></i>
+                            </span>
+                            @Html.DropDownListFor(model => model.OrganizationBranchID, ViewBag.OrganizationBranchID as SelectList, "Select Organization Branch", new { @class = "form-control input-circle-right" })
+                        </div>
+                        @Html.ValidationMessageFor(model => model.OrganizationBranchID, String.Empty, new { @class = "font-red-thunderbird" })
+                    </div>
+                </div>
+            </div>
+            <div class="form-body">
+                <div class="form-group">
+                    <label class="col-md-3 control-label">Department Name</label>
+                    <div class="col-md-4">
+                        <div class="input-group">
+                            <span class="input-group-addon input-circle-left">
+                                <i class="fa fa-building" aria-hidden="true"></i>
+                            </span>
+                            @Html.TextBoxFor(model => model.DepartmentName, new { @placeholder = "Enter Department Name", @class = " form-control input-circle-right" })
+                        </div>
+                        @Html.ValidationMessageFor(model => model.DepartmentName, String.Empty, new { @class = "font-red-thunderbird" })
+                    </div>
+                </div>
+            </div>
+            <div class="form-actions">
+                <div class="row">
+                    <div class="col-md-offset-3 col-md-9">
+                        <button type="submit" class="btn btn-circle green">Create</button>
+                        @Html.ActionLink("Cancel", "Index", "Department", null,  new { @type = "button", @class = "btn btn-circle grey-salsa btn-outline" })
+                    </div>
+                </div>
+            </div>
+        }
+        <!-- END FORM-->
+    </div>
 </div>

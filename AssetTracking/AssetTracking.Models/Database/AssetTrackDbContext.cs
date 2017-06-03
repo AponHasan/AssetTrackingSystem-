@@ -13,8 +13,8 @@ namespace AssetTracking.Models.Database
     {
         public AssetTrackDbContext()
         {
-            Configuration.LazyLoadingEnabled = false;
-            Configuration.ProxyCreationEnabled = false;
+            Configuration.LazyLoadingEnabled = true;
+            Configuration.ProxyCreationEnabled = true;
         }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
