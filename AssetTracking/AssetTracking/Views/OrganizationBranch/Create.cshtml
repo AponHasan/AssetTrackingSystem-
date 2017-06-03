@@ -33,7 +33,7 @@
                             </span>
                         @Html.DropDownListFor(model => model.OrganizationID, ViewBag.OrganizationID as SelectList, "Select Organization", new {@class = "form-control input-circle-right"})
                     </div>
-                    @Html.ValidationMessageFor(model => model.OrganizationID)
+                    @Html.ValidationMessageFor(model => model.OrganizationID, String.Empty, new { @class = "font-red-thunderbird" })
                 </div>
             </div>
         </div>
@@ -47,7 +47,7 @@
                             </span>
                         @Html.TextBoxFor(model => model.OrganizationBranchName, new {@placeholder = "Enter Organization Branch Name", @class = " form-control input-circle-right"})
                     </div>
-                    @Html.ValidationMessageFor(model => model.OrganizationBranchName)
+                    @Html.ValidationMessageFor(model => model.OrganizationBranchName, String.Empty, new { @class = "font-red-thunderbird" })
                 </div>
             </div>
         </div>
@@ -61,7 +61,7 @@
                             </span>
                         @Html.TextBoxFor(model => model.OrganizatioBranchShortName, new {@class = "form-control input-circle-right", @placeholder = "Enter Organization Branch Short Name"})
                     </div>
-                    @Html.ValidationMessageFor(model => model.OrganizatioBranchShortName)
+                    @Html.ValidationMessageFor(model => model.OrganizatioBranchShortName, String.Empty, new { @class = "font-red-thunderbird" })
                 </div>
             </div>
         </div>
