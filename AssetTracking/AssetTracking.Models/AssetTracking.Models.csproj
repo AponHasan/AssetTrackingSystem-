@@ -61,6 +61,7 @@
     <Compile Include="Interfaces\IModelManager\IGeneralCategoryManager.cs" />
     <Compile Include="Interfaces\IModelManager\IOrganizationBranchManager.cs" />
     <Compile Include="Interfaces\IModelManager\IOrganizationManager.cs" />
+    <Compile Include="Interfaces\IModelManager\IStockManager.cs" />
     <Compile Include="Interfaces\IModelManager\ISubCategoryManager.cs" />
     <Compile Include="Interfaces\IModelManager\IVendorManager.cs" />
     <Compile Include="Interfaces\IModelManager\IWarrantyPeriodUnitManager.cs" />
@@ -76,6 +77,7 @@
     <Compile Include="Interfaces\IModelRepository\IGeneralCategoryRepository.cs" />
     <Compile Include="Interfaces\IModelRepository\IOrganizationBranchRepository.cs" />
     <Compile Include="Interfaces\IModelRepository\IOrganizationRepository.cs" />
+    <Compile Include="Interfaces\IModelRepository\IStockRepository.cs" />
     <Compile Include="Interfaces\IModelRepository\ISubCategoryRepository.cs" />
     <Compile Include="Interfaces\IModelRepository\IVendorRepository.cs" />
     <Compile Include="Interfaces\IModelRepository\IWarrantyPeriodUnitRepository.cs" />

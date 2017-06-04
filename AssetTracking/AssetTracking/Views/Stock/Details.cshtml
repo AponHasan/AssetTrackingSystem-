@@ -1,0 +1,43 @@
+﻿@model AssetTracking.Models.Models.AssetPurchaseHeader
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>AssetPurchaseHeader</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.OrganizationBranch.OrganizationBranchName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OrganizationBranch.OrganizationBranchName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Vendor.VendorName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Vendor.VendorName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PurchasedOn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PurchasedOn)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.AssetPurchaseHeaderID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

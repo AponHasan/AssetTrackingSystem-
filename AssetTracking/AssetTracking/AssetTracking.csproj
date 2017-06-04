@@ -248,6 +248,7 @@
     <Compile Include="Controllers\GeneralCategoryController.cs" />
     <Compile Include="Controllers\OrganizationBranchController.cs" />
     <Compile Include="Controllers\OrganizationController.cs" />
+    <Compile Include="Controllers\StockController.cs" />
     <Compile Include="Controllers\SubCategoryController.cs" />
     <Compile Include="Controllers\VendorController.cs" />
     <Compile Include="Controllers\WarrantyPeriodUnitController.cs" />
@@ -334,6 +335,11 @@
     <Content Include="Views\AssetPurchaseDetailSerialNumbe\Details.cshtml" />
     <Content Include="Views\AssetPurchaseDetailSerialNumbe\Edit.cshtml" />
     <Content Include="Views\AssetPurchaseDetailSerialNumbe\Index.cshtml" />
+    <Content Include="Views\Stock\Create.cshtml" />
+    <Content Include="Views\Stock\Delete.cshtml" />
+    <Content Include="Views\Stock\Details.cshtml" />
+    <Content Include="Views\Stock\Edit.cshtml" />
+    <Content Include="Views\Stock\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
