@@ -17,12 +17,14 @@ namespace AssetTracking.Controllers
         private AssetTrackDbContext db = new AssetTrackDbContext();
         private CategoryManager _categoryManager;
         private GeneralCategoryManager _generalCategoryManager;
+        private SubCategoryManager _subCategoryManager;
 
 
         public CategoryController()
         {
             _categoryManager=new CategoryManager();
             _generalCategoryManager = new GeneralCategoryManager();
+            _subCategoryManager = new SubCategoryManager();
         }
         // GET: /Category/
         public ActionResult Index()
@@ -132,6 +134,23 @@ namespace AssetTracking.Controllers
             return RedirectToAction("Index");
         }
 
+
+        public JsonResult GetSubCategoryByCategory(long categoryId)
+        {
+            var category = _subCategoryManager.GetSubCategoryByCategory(categoryId);
+            var categoryJsonData = category.Select(
+                c => new
+                {
+                    c.CategoryID,
+                    c.DetailCategories,
+                    c.SubCategoryCode,
+                    c.SubCategoryDescription,
+                    c.SubCategoryID,
+                    c.SubCategoryName
+
+                });
+            return Json(categoryJsonData, JsonRequestBehavior.AllowGet);
+        }
         protected override void Dispose(bool disposing)
         {
             if (disposing)

@@ -51,6 +51,7 @@
     <Compile Include="GeneralCategoryManager.cs" />
     <Compile Include="OrganizationBranchManager.cs" />
     <Compile Include="OrganizationManager.cs" />
+    <Compile Include="ProductManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StockManager.cs" />
     <Compile Include="SubCategoryManager.cs" />

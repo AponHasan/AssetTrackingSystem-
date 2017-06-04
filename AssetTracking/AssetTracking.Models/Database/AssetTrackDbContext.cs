@@ -13,8 +13,8 @@ namespace AssetTracking.Models.Database
     {
         public AssetTrackDbContext()
         {
-            Configuration.LazyLoadingEnabled = true;
-            Configuration.ProxyCreationEnabled = true;
+            Configuration.LazyLoadingEnabled = false;
+            Configuration.ProxyCreationEnabled = false;
         }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -33,7 +33,7 @@ namespace AssetTracking.Models.Database
         public DbSet<Employee> Employees { get; set; }
         public DbSet<AssetPurchaseHeader> AssetPurchaseHeaders { get; set; }
         public DbSet<AssetPurchaseDetail> AssetPurchaseDetails { get; set; }
-        
+        public DbSet<Product> Products { get; set; }
         public DbSet<AssetPurchaseDetailSerialNumber> AssetPurchaseDetailSerialNumbers { get; set; }
         public DbSet<WarrantyPeriodUnit> WarrantyPeriodUnits { get; set; }
 

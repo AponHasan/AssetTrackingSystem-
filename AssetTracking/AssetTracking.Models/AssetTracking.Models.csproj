@@ -61,6 +61,7 @@
     <Compile Include="Interfaces\IModelManager\IGeneralCategoryManager.cs" />
     <Compile Include="Interfaces\IModelManager\IOrganizationBranchManager.cs" />
     <Compile Include="Interfaces\IModelManager\IOrganizationManager.cs" />
+    <Compile Include="Interfaces\IModelManager\IProductManager.cs" />
     <Compile Include="Interfaces\IModelManager\IStockManager.cs" />
     <Compile Include="Interfaces\IModelManager\ISubCategoryManager.cs" />
     <Compile Include="Interfaces\IModelManager\IVendorManager.cs" />
@@ -77,6 +78,7 @@
     <Compile Include="Interfaces\IModelRepository\IGeneralCategoryRepository.cs" />
     <Compile Include="Interfaces\IModelRepository\IOrganizationBranchRepository.cs" />
     <Compile Include="Interfaces\IModelRepository\IOrganizationRepository.cs" />
+    <Compile Include="Interfaces\IModelRepository\IProductRepository.cs" />
     <Compile Include="Interfaces\IModelRepository\IStockRepository.cs" />
     <Compile Include="Interfaces\IModelRepository\ISubCategoryRepository.cs" />
     <Compile Include="Interfaces\IModelRepository\IVendorRepository.cs" />
@@ -101,6 +103,10 @@
     <Compile Include="Migrations\201706022047011_PurchaseModelClassModifyall.Designer.cs">
       <DependentUpon>201706022047011_PurchaseModelClassModifyall.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706042023577_addProductClass.cs" />
+    <Compile Include="Migrations\201706042023577_addProductClass.Designer.cs">
+      <DependentUpon>201706042023577_addProductClass.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AssetLocation.cs" />
     <Compile Include="Models\AssetPurchaseDetail.cs" />
@@ -114,6 +120,7 @@
     <Compile Include="Models\GeneralCategory.cs" />
     <Compile Include="Models\Organization.cs" />
     <Compile Include="Models\OrganizationBranch.cs" />
+    <Compile Include="Models\Product.cs" />
     <Compile Include="Models\SubCategory.cs" />
     <Compile Include="Models\Vendor.cs" />
     <Compile Include="Models\WarrantyPeriodUnit.cs" />
@@ -138,6 +145,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706022047011_PurchaseModelClassModifyall.resx">
       <DependentUpon>201706022047011_PurchaseModelClassModifyall.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706042023577_addProductClass.resx">
+      <DependentUpon>201706042023577_addProductClass.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
