@@ -1,92 +1,133 @@
 ﻿@model AssetTracking.Models.Models.AssetPurchaseDetail
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Create Asset Purchase Detail";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Create</h2>
-
-@using (Html.BeginForm()) 
-{
-    @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>AssetPurchaseDetail</h4>
-        <hr />
-        @Html.ValidationSummary(true)
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.AssetPurchaseHeaderID, "AssetPurchaseHeaderID", new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("AssetPurchaseHeaderID", String.Empty)
-                @Html.ValidationMessageFor(model => model.AssetPurchaseHeaderID)
-            </div>
+<!-- BEGIN FORM DESIGN -->
+<div class="portlet box green">
+    <div class="portlet-title">
+        <div class="caption">
+            <i class="fa fa-gift"></i>Create Asset Purchase Detail
         </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.SubCategoryID, "SubCategoryID", new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("SubCategoryID", String.Empty)
-                @Html.ValidationMessageFor(model => model.SubCategoryID)
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Quantity, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Quantity)
-                @Html.ValidationMessageFor(model => model.Quantity)
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.UnitPrice, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.UnitPrice)
-                @Html.ValidationMessageFor(model => model.UnitPrice)
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.IsWarranty, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.IsWarranty)
-                @Html.ValidationMessageFor(model => model.IsWarranty)
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.WarrantyPeriod, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.WarrantyPeriod)
-                @Html.ValidationMessageFor(model => model.WarrantyPeriod)
-            </div>
-        </div>
-
-        @*<div class="form-group">
-            @Html.LabelFor(model => model.WarrantyPeriodUnitID, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.WarrantyPeriodUnitID)
-                @Html.ValidationMessageFor(model => model.WarrantyPeriodUnitID)
-            </div>
-        </div>*@
-        <div class="form-group">
-            @Html.LabelFor(model => model.WarrantyPeriodUnitID, "WarrantyPeriodUnitID", new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("WarrantyPeriodUnitID", String.Empty)
-                @Html.ValidationMessageFor(model => model.WarrantyPeriodUnitID)
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
-            </div>
+        <div class="tools">
+            <a href="javascript:;" class="collapse"> </a>
+            <a href="#portlet-config" data-toggle="modal" class="config"> </a>
+            <a href="javascript:;" class="reload"> </a>
+            <a href="javascript:;" class="remove"> </a>
         </div>
     </div>
-}
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
+    <div class="portlet-body form">
+        <!-- BEGIN FORM-->
+        @using (Html.BeginForm("Create", "AssetPurchaseDetail", FormMethod.Post, new { @class = "form-horizontal" }))
+        {
+            @Html.AntiForgeryToken()
+            <div class="form-body">
+                <div class="form-group">
+                    <label class="col-md-3 control-label">general Category</label>
+                    <div class="col-md-4">
+                        @Html.ValidationSummary(true)
+                        <div class="input-group">
+                            <span class="input-group-addon input-circle-left">
+                                <i class="fa fa-building-o" aria-hidden="true"></i>
+                            </span>
+                            @Html.DropDownList("AssetPurchaseHeaderID", ViewBag.AssetPurchaseHeaderID as SelectList, "Select Asset Purchase Header", htmlAttributes: new { @class = "form-control input-circle-right" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-body">
+                <div class="form-group">
+                    <label class="col-md-3 control-label">Sub-Category</label>
+                    <div class="col-md-4">
+                        @Html.ValidationSummary(true)
+                        <div class="input-group">
+                            <span class="input-group-addon input-circle-left">
+                                <i class="fa fa-building-o" aria-hidden="true"></i>
+                            </span>
+                            @Html.DropDownList("SubCategoryID", ViewBag.SubCategoryID as SelectList, "Select Sub-Category", htmlAttributes: new { @class = "form-control input-circle-right" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-body">
+                <div class="form-group">
+                    <label class="col-md-3 control-label">Quantity</label>
+                    <div class="col-md-4">
+                        <div class="input-group">
+                            <span class="input-group-addon input-circle-left">
+                                <i class="fa fa-font" aria-hidden="true"></i>
+                            </span>
+                            @Html.TextBoxFor(model => model.Quantity, new {@class = "form-control input-circle-right", @placeholder = "Enter Quantity" })
+                        </div>
+                        @Html.ValidationMessageFor(model => model.Quantity, String.Empty, new {@class = "font-red-thunderbird"})
+                    </div>
+                </div>
+            </div>
+            <div class="form-body">
+                <div class="form-group">
+                    <label class="col-md-3 control-label">UnitPrice</label>
+                    <div class="col-md-4">
+                        <div class="input-group">
+                            <span class="input-group-addon input-circle-left">
+                                <i class="fa fa-font" aria-hidden="true"></i>
+                            </span>
+                            @Html.TextBoxFor(model => model.UnitPrice, new { @class = "form-control input-circle-right", @placeholder = "Enter UnitPrice" })
+                        </div>
+                        @Html.ValidationMessageFor(model => model.UnitPrice, String.Empty, new { @class = "font-red-thunderbird" })
+                    </div>
+                </div>
+            </div>
+            <div class="form-body">
+                <div class="form-group">
+                    <label class="col-md-3 control-label">IsWarranty</label>
+                    <div class="col-md-4">
+                        <div class="input-group">
+                            @Html.CheckBoxFor(m => m.IsWarranty)
+                            <br>
+                        </div>
+                        @Html.ValidationMessageFor(model => model.IsWarranty, String.Empty, new { @class = "font-red-thunderbird" })
+                    </div>
+                </div>
+            </div>
+            <div class="form-body">
+                <div class="form-group">
+                    <label class="col-md-3 control-label">Warranty Period</label>
+                    <div class="col-md-4">
+                        <div class="input-group">
+                            <span class="input-group-addon input-circle-left">
+                                <i class="fa fa-font" aria-hidden="true"></i>
+                            </span>
+                            @Html.TextBoxFor(model => model.WarrantyPeriod, new { @class = "form-control input-circle-right", @placeholder = "Enter WarrantyPeriod" })
+                        </div>
+                        @Html.ValidationMessageFor(model => model.WarrantyPeriod, String.Empty, new { @class = "font-red-thunderbird" })
+                    </div>
+                </div>
+            </div>
+            <div class="form-body">
+                <div class="form-group">
+                    <label class="col-md-3 control-label">general Category</label>
+                    <div class="col-md-4">
+                        @Html.ValidationSummary(true)
+                        <div class="input-group">
+                            <span class="input-group-addon input-circle-left">
+                                <i class="fa fa-building-o" aria-hidden="true"></i>
+                            </span>
+                            @Html.DropDownList("WarrantyPeriodUnitID", ViewBag.WarrantyPeriodUnitID as SelectList, "Select Warranty Period Unit", htmlAttributes: new { @class = "form-control input-circle-right" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-actions">
+                <div class="row">
+                    <div class="col-md-offset-3 col-md-9">
+                        <button type="submit" class="btn btn-circle green">Create</button>
+                        @Html.ActionLink("Cancel", "Index", "AssetPurchaseDetail", null, new { @type = "button", @class = "btn btn-circle grey-salsa btn-outline" })
+                    </div>
+                </div>
+            </div>
+        }
+        <!-- END FORM-->
+    </div>
 </div>
