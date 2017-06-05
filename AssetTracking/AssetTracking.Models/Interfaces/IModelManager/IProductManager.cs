@@ -7,8 +7,7 @@ using AssetTracking.Models.Models;
 
 namespace AssetTracking.Models.Interfaces.IModelManager
 {
-    public interface ISubCategoryManager : IManager<SubCategory>
+    public interface IProductManager : IManager<Product>
     {
-        ICollection<SubCategory> GetSubCategoryByCategory(long categoryId);
     }
 }
