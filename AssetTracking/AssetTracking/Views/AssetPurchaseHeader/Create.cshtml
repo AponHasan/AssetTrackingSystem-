@@ -1,64 +1,79 @@
 ﻿@model AssetTracking.Models.Models.AssetPurchaseHeader
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Create Asset Purchase Header";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<h2>Create</h2>
-
-@using (Html.BeginForm()) 
-{
-    @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>AssetPurchaseHeader</h4>
-        <hr />
-        @Html.ValidationSummary(true)
-
-        @*<div class="form-group">
-            @Html.LabelFor(model => model.VendorID, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.VendorID)
-                @Html.ValidationMessageFor(model => model.VendorID)
-            </div>
-        </div>*@
-        <div class="form-group">
-            @Html.LabelFor(model => model.VendorID, "VendorID", new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("VendorID", String.Empty)
-                @Html.ValidationMessageFor(model => model.VendorID)
-            </div>
+<!-- BEGIN FORM DESIGN -->
+<div class="portlet box green">
+    <div class="portlet-title">
+        <div class="caption">
+            <i class="fa fa-gift"></i>Create Asset Purchase Header
         </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.PurchasedOn, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.TextBoxFor(model => model.PurchasedOn,new { @type = "date" })
-                @Html.ValidationMessageFor(model => model.PurchasedOn)
-            </div>
-        </div>
-
-
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.OrganizationBranchID, "OrganizationBranchID", new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("OrganizationBranchID", String.Empty)
-                @Html.ValidationMessageFor(model => model.OrganizationBranchID)
-            </div>
-        </div>
-
-        
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
-            </div>
+        <div class="tools">
+            <a href="javascript:;" class="collapse"> </a>
+            <a href="#portlet-config" data-toggle="modal" class="config"> </a>
+            <a href="javascript:;" class="reload"> </a>
+            <a href="javascript:;" class="remove"> </a>
         </div>
     </div>
-}
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
+    <div class="portlet-body form">
+        <!-- BEGIN FORM-->
+        @using (Html.BeginForm("Create", "OrganizationBranch", FormMethod.Post, new { @class = "form-horizontal" }))
+        {
+            @Html.AntiForgeryToken()
+            <div class="form-body">
+                <div class="form-group">
+                    <label class="col-md-3 control-label">Organization Name</label>
+                    <div class="col-md-4">
+                        @Html.ValidationSummary(true)
+                        <div class="input-group">
+                            <span class="input-group-addon input-circle-left">
+                                <i class="fa fa-building-o" aria-hidden="true"></i>
+                            </span>
+                            @Html.DropDownList("VendorID", ViewBag.VendorID as SelectList, "Select Vendor", htmlAttributes: new { @class = "form-control input-circle-right" })
+                        </div>
+                        @Html.ValidationMessageFor(model => model.VendorID, String.Empty, new { @class = "font-red-thunderbird" })
+                    </div>
+                </div>
+            </div>
+            <div class="form-body">
+                <div class="form-group">
+                    <label class="col-md-3 control-label">Purchased Date</label>
+                    <div class="col-md-4">
+                        <div class="input-group">
+                            <span class="input-group-addon input-circle-left">
+                                <i class="fa fa-building" aria-hidden="true"></i>
+                            </span>
+                            @Html.TextBoxFor(model => model.PurchasedOn, new { @class = " form-control input-circle-right" , @type="date"})
+                        </div>
+                        @Html.ValidationMessageFor(model => model.PurchasedOn, String.Empty, new { @class = "font-red-thunderbird" })
+                    </div>
+                </div>
+            </div>
+            <div class="form-body">
+                <div class="form-group">
+                    <label class="col-md-3 control-label">Organization Branch</label>
+                    <div class="col-md-4">
+                        <div class="input-group">
+                            <span class="input-group-addon input-circle-left">
+                                <i class="fa fa-font" aria-hidden="true"></i>
+                            </span>
+                            @Html.DropDownList("OrganizationBranchID", ViewBag.OrganizationBranchID as SelectList, "Select Organization Branch", htmlAttributes: new { @class = "form-control input-circle-right" })
+                        </div>
+                        @Html.ValidationMessageFor(model => model.OrganizationBranchID, String.Empty, new { @class = "font-red-thunderbird" })
+                    </div>
+                </div>
+            </div>
+            <div class="form-actions">
+                <div class="row">
+                    <div class="col-md-offset-3 col-md-9">
+                        <button type="submit" class="btn btn-circle green">Create</button>
+                        @Html.ActionLink("Cancel", "Index", "AssetPurchaseHeader", null, new { @type = "button", @class = "btn btn-circle grey-salsa btn-outline" })
+                    </div>
+                </div>
+            </div>
+        }
+        <!-- END FORM-->
+    </div>
 </div>
