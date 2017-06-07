@@ -107,6 +107,14 @@
     <Compile Include="Migrations\201706042023577_addProductClass.Designer.cs">
       <DependentUpon>201706042023577_addProductClass.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706051836121_AssetDAssetHModelClass.cs" />
+    <Compile Include="Migrations\201706051836121_AssetDAssetHModelClass.Designer.cs">
+      <DependentUpon>201706051836121_AssetDAssetHModelClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706051839255_AssetDAssetHcHange.cs" />
+    <Compile Include="Migrations\201706051839255_AssetDAssetHcHange.Designer.cs">
+      <DependentUpon>201706051839255_AssetDAssetHcHange.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AssetLocation.cs" />
     <Compile Include="Models\AssetPurchaseDetail.cs" />
@@ -148,6 +156,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706042023577_addProductClass.resx">
       <DependentUpon>201706042023577_addProductClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706051836121_AssetDAssetHModelClass.resx">
+      <DependentUpon>201706051836121_AssetDAssetHModelClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706051839255_AssetDAssetHcHange.resx">
+      <DependentUpon>201706051839255_AssetDAssetHcHange.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

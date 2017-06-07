@@ -16,37 +16,101 @@
         <hr />
         @Html.ValidationSummary(true)
 
+        <div class="col-md-12">
 
+            <div class="form-group">
+                @Html.LabelFor(c => c.PurchasedOn, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(c => c.PurchasedOn)
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.Label("VendorID", "Vendor", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownList("VendorID", ViewBag.ProductCategories as SelectList, "Select...", htmlAttributes: new { @class = "" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.Label("OrganizationBranchID", "OrganizationBranch", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownList("OrganizationBranchID", ViewBag.ProductCategories as SelectList, "Select...", htmlAttributes: new { @class = "" })
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="col-md-6">
+                <div class="form-group">
+                    @*@Html.LabelFor(model => model.AssetPurchaseDetails.SubCategory.Category.GeneralCategory.GeneralCategoryID, "GeneralCategoryID", new { @class = "control-label col-md-2" })*@
+                    @Html.Label("GeneralCategory", htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.DropDownList("GeneralCategoryID", ViewBag.generalCategoryID as SelectList, "Select General Category", htmlAttributes: new { @class = "" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @*@Html.LabelFor(model => model.SubCategory.Category.CategoryID, "CategoryID", new { @class = "control-label col-md-2" })*@
+                    @Html.Label("Category", htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.DropDownList("CategoryID", new SelectList(new List<SelectListItem>()), "Select Category", htmlAttributes: new { @class = "" })
 
-        @*<div class="form-group">
-            @Html.Label("SubCategoryId", "Category", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("CategoryId", ViewBag.ProductCategories as SelectList, "Select...", htmlAttributes: new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.Label("SubCategory", htmlAttributes: new { @class = "control-label col-md-2" })
+                    @*@Html.LabelFor(model => model.SubCategoryID, "SubCategoryID", new { @class = "control-label col-md-2" })*@
+                    <div class="col-md-10">
+                        @Html.DropDownList("SubCategoryID", new SelectList(new List<SelectListItem>()), "Select Category", htmlAttributes: new { @class = "" })                       
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.Label("ProductID", "Product", htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.DropDownList("ProductID", new SelectList(new List<SelectListItem>()), "Select Product", htmlAttributes: new { @class = "" })
+                    </div>
+                </div>
             </div>
-        </div>*@
+            <div class="col-md-6">
+                <div class="form-group">
+                    @Html.Label("Quantity", htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.TextBox("Quantity", "", new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.Label("UnitPrice", htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.TextBox("UnitPrice", "", new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                </div>
+            </div>
+            <input type="button" id="btn_stock_add" value="Add" />
+        </div>
+        <hr/>
+        <div class="row">
+            <table>
+                <thead>
+                <tr>
+                    <th>Product</th>                   
+                    <th>Quantity</th>
+                    <th>Unit Price</th>                  
+                    <th>Totel Price</th>
+                </tr>
 
-        @*<div class="form-group">
-            @Html.Label("ProductId", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("ProductId", new SelectList(new List<SelectListItem>()), "Select...", htmlAttributes: new { @class = "form-control" })
-            </div>
-        </div>*@
-        
-        @*<div class="form-group">
-            @Html.Label("AssetPurchaseDetailID", "AssetPurchaseDetailID", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("AssetPurchaseDetailID", ViewBag.ProductCategories as SelectList, "Select...", htmlAttributes: new { @class = "form-control" })
-            </div>
-        </div>*@
-        
+                </thead>
+                <tbody id="tbl_stock"></tbody>
+            </table>
+        </div>
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Create" class="btn btn-default"/>
             </div>
         </div>
     </div>
 }
-
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>
+@section scripts{
+    <script src="~/Scripts/SubCategory/Create.js"></script>
+    <script src="~/Scripts/Product/Create.js"></script>
+    <script src="~/Scripts/Stock/Create.js"></script>  
+}

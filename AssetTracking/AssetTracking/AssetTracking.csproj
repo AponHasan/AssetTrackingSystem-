@@ -232,6 +232,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\Product\Create.js" />
+    <Content Include="Scripts\Stock\Create.js" />
     <Content Include="Scripts\SubCategory\Create.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>

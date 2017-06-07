@@ -9,5 +9,6 @@ namespace AssetTracking.Models.Interfaces.IModelManager
 {
     public interface IProductManager : IManager<Product>
     {
+        ICollection<Product> GetProductBySubCategory(long subcategoryId);
     }
 }

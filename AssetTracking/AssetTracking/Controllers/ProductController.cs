@@ -158,6 +158,23 @@ namespace AssetTracking.Controllers
             return RedirectToAction("Index");
         }
 
+        public JsonResult GetProductBySubCategory(long subcategoryId)
+        {
+            var subcategory = _productManager.GetProductBySubCategory(subcategoryId);
+            var categoryJsonData = subcategory.Select(
+                c => new
+                {
+                    c.ProductID,
+                    c.ProductCode,
+                    c.ProductName,
+                    c.SubCategoryID
+
+                });
+            return Json(categoryJsonData, JsonRequestBehavior.AllowGet);
+        }
+
+        
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)
