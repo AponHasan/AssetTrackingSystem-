@@ -1,75 +1,111 @@
 ﻿@model AssetTracking.Models.Models.SubCategory
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Create Sub-Category";
 }
 
-<h2>Create</h2>
-
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
-
-    <div class="form-horizontal">
-        <h4>SubCategory</h4>
-        <hr />
-        @Html.ValidationSummary(true)
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Category.GeneralCategory.GeneralCategoryID, "GeneralCategoryID", new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @*@Html.DropDownList("GeneralCategoryID", String.Empty)
-                    <div class="col-md-10">*@
-                @Html.DropDownList("GeneralCategoryID", ViewBag.generalCategoryID as SelectList, "Select General Category", htmlAttributes: new { @class = "" })
-
-                @Html.ValidationMessageFor(model => model.CategoryID)
-            </div>
+<!-- BEGIN FORM DESIGN -->
+<div class="portlet box green">
+    <div class="portlet-title">
+        <div class="caption">
+            <i class="fa fa-gift"></i>Create Sub-Category
         </div>
-
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.CategoryID, "CategoryID", new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("CategoryID", new SelectList(new List<SelectListItem>()), "Select Category", htmlAttributes: new { @class = "" })
-                @Html.ValidationMessageFor(model => model.CategoryID)
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.SubCategoryName, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.SubCategoryName)
-                @Html.ValidationMessageFor(model => model.SubCategoryName)
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.SubCategoryCode, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.SubCategoryCode)
-                @Html.ValidationMessageFor(model => model.SubCategoryCode)
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.SubCategoryDescription, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.SubCategoryDescription)
-                @Html.ValidationMessageFor(model => model.SubCategoryDescription)
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
-            </div>
+        <div class="tools">
+            <a href="javascript:;" class="collapse"> </a>
+            <a href="#portlet-config" data-toggle="modal" class="config"> </a>
+            <a href="javascript:;" class="reload"> </a>
+            <a href="javascript:;" class="remove"> </a>
         </div>
     </div>
-}
+    <div class="portlet-body form">
+        <!-- BEGIN FORM-->
+        @using (Html.BeginForm("Create", "SubCategory", FormMethod.Post, new { @class = "form-horizontal" }))
+        {
+            @Html.AntiForgeryToken()
+            <div class="form-body">
+                <div class="form-group">
+                    <label class="col-md-3 control-label">general Category</label>
+                    <div class="col-md-4">
+                        @Html.ValidationSummary(true)
+                        <div class="input-group">
+                            <span class="input-group-addon input-circle-left">
+                                <i class="fa fa-building-o" aria-hidden="true"></i>
+                            </span>
+                            @Html.DropDownList("GeneralCategoryID", ViewBag.generalCategoryID as SelectList, "Select General Category", htmlAttributes: new {@class = "form-control input-circle-right"})
+                        </div>
+                        @Html.ValidationMessageFor(model => model.CategoryID, String.Empty, new { @class = "font-red-thunderbird" })
+                    </div>
+                </div>
+            </div>
+            <div class="form-body">
+                <div class="form-group">
+                    <label class="col-md-3 control-label">Category</label>
+                    <div class="col-md-4">
+                        <div class="input-group">
+                            <span class="input-group-addon input-circle-left">
+                                <i class="fa fa-building" aria-hidden="true"></i>
+                            </span>
+                            @Html.DropDownList("CategoryID", new SelectList(new List<SelectListItem>()), "Select Category", htmlAttributes: new {@class = "form-control input-circle-right" })
+                        </div>
+                        @Html.ValidationMessageFor(model => model.CategoryID, String.Empty, new { @class = "font-red-thunderbird" })
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
+                    </div>
+                </div>
+            </div>
+            <div class="form-body">
+                <div class="form-group">
+                    <label class="col-md-3 control-label">Sub Category Name</label>
+                    <div class="col-md-4">
+                        <div class="input-group">
+                            <span class="input-group-addon input-circle-left">
+                                <i class="fa fa-font" aria-hidden="true"></i>
+                            </span>
+                            @Html.TextBoxFor(model => model.SubCategoryName, new { @class = "form-control input-circle-right", @placeholder = "Enter Sub Category Name" })
+                        </div>
+                        @Html.ValidationMessageFor(model => model.SubCategoryName, String.Empty, new { @class = "font-red-thunderbird" })
+                    </div>
+                </div>
+            </div>
+            <div class="form-body">
+                <div class="form-group">
+                    <label class="col-md-3 control-label">Sub Category Code</label>
+                    <div class="col-md-4">
+                        <div class="input-group">
+                            <span class="input-group-addon input-circle-left">
+                                <i class="fa fa-font" aria-hidden="true"></i>
+                            </span>
+                            @Html.TextBoxFor(model => model.SubCategoryCode, new {@class = "form-control input-circle-right", @placeholder = "Enter Sub Category Code"})
+                        </div>
+                        @Html.ValidationMessageFor(model => model.SubCategoryCode, String.Empty, new {@class = "font-red-thunderbird"})
+                    </div>
+                </div>
+            </div>
+            <div class="form-body">
+                <div class="form-group">
+                    <label class="col-md-3 control-label">Sub Category Description</label>
+                    <div class="col-md-4">
+                        <div class="input-group">
+                            <span class="input-group-addon input-circle-left">
+                                <i class="fa fa-font" aria-hidden="true"></i>
+                            </span>
+                            @Html.TextBoxFor(model => model.SubCategoryDescription, new { @class = "form-control input-circle-right", @placeholder = "Enter Sub Category Description" })
+                        </div>
+                        @Html.ValidationMessageFor(model => model.SubCategoryDescription, String.Empty, new { @class = "font-red-thunderbird" })
+                    </div>
+                </div>
+            </div>
+            <div class="form-actions">
+                <div class="row">
+                    <div class="col-md-offset-3 col-md-9">
+                        <button type="submit" class="btn btn-circle green">Create</button>
+                        @Html.ActionLink("Cancel", "Index", "SubCategory", null, new { @type = "button", @class = "btn btn-circle grey-salsa btn-outline" })
+                    </div>
+                </div>
+            </div>
+        }
+        <!-- END FORM-->
+    </div>
 </div>
 @section scripts{
-    <script src="~/Scripts/SubCategory/Create.js"></script>
+        <script src="~/Scripts/SubCategory/Create.js"></script>
 }

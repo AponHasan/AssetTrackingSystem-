@@ -1,61 +1,93 @@
 ﻿@model AssetTracking.Models.Models.Category
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Create Category";
 }
 
-<h2>Create</h2>
-
-@using (Html.BeginForm()) 
-{
-    @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>Category</h4>
-        <hr />
-        @Html.ValidationSummary(true)
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.GeneralCategoryID,  new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("GeneralCategoryID", ViewBag.generalCategoryID as SelectList, "Select General Category", htmlAttributes: new { @class = "" })
-                @*@Html.DropDownList("GeneralCategoryID", String.Empty)*@
-                @Html.ValidationMessageFor(model => model.GeneralCategoryID)
-            </div>
+  <!-- BEGIN FORM DESIGN -->
+<div class="portlet box green">
+    <div class="portlet-title">
+        <div class="caption">
+            <i class="fa fa-gift"></i>Create Category
         </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.CategoryName, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.CategoryName)
-                @Html.ValidationMessageFor(model => model.CategoryName)
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.CategoryCode, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.CategoryCode)
-                @Html.ValidationMessageFor(model => model.CategoryCode)
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.CategoryDescription, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.CategoryDescription)
-                @Html.ValidationMessageFor(model => model.CategoryDescription)
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
-            </div>
+        <div class="tools">
+            <a href="javascript:;" class="collapse"> </a>
+            <a href="#portlet-config" data-toggle="modal" class="config"> </a>
+            <a href="javascript:;" class="reload"> </a>
+            <a href="javascript:;" class="remove"> </a>
         </div>
     </div>
-}
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
+    <div class="portlet-body form">
+        <!-- BEGIN FORM-->
+        @using (Html.BeginForm("Create", "Category", FormMethod.Post, new { @class = "form-horizontal" }))
+        {
+            @Html.AntiForgeryToken()
+            <div class="form-body">
+                <div class="form-group">
+                    <label class="col-md-3 control-label">general Category</label>
+                    <div class="col-md-4">
+                        @Html.ValidationSummary(true)
+                        <div class="input-group">
+                            <span class="input-group-addon input-circle-left">
+                                <i class="fa fa-building-o" aria-hidden="true"></i>
+                            </span>
+                            @Html.DropDownListFor(model => model.GeneralCategoryID, ViewBag.generalCategoryID as SelectList, "Select general Category", new { @class = "form-control input-circle-right" })
+                        </div>
+                        @Html.ValidationMessageFor(model => model.GeneralCategoryID, String.Empty, new { @class = "font-red-thunderbird" })
+                    </div>
+                </div>
+            </div>
+            <div class="form-body">
+                <div class="form-group">
+                    <label class="col-md-3 control-label">Category Name</label>
+                    <div class="col-md-4">
+                        <div class="input-group">
+                            <span class="input-group-addon input-circle-left">
+                                <i class="fa fa-building" aria-hidden="true"></i>
+                            </span>
+                            @Html.TextBoxFor(model => model.CategoryName, new { @placeholder = "Enter Category Name", @class = " form-control input-circle-right" })
+                        </div>
+                        @Html.ValidationMessageFor(model => model.CategoryName, String.Empty, new { @class = "font-red-thunderbird" })
+                    </div>
+                </div>
+            </div>
+            <div class="form-body">
+                <div class="form-group">
+                    <label class="col-md-3 control-label">Category Code</label>
+                    <div class="col-md-4">
+                        <div class="input-group">
+                            <span class="input-group-addon input-circle-left">
+                                <i class="fa fa-font" aria-hidden="true"></i>
+                            </span>
+                            @Html.TextBoxFor(model => model.CategoryCode, new {@class = "form-control input-circle-right", @placeholder = "Enter Category Code" })
+                        </div>
+                        @Html.ValidationMessageFor(model => model.CategoryCode, String.Empty, new {@class = "font-red-thunderbird"})
+                    </div>
+                </div>
+            </div>
+            <div class="form-body">
+                <div class="form-group">
+                    <label class="col-md-3 control-label">Category Description</label>
+                    <div class="col-md-4">
+                        <div class="input-group">
+                            <span class="input-group-addon input-circle-left">
+                                <i class="fa fa-font" aria-hidden="true"></i>
+                            </span>
+                            @Html.TextBoxFor(model => model.CategoryDescription, new { @class = "form-control input-circle-right", @placeholder = "Enter Category Description" })
+                        </div>
+                        @Html.ValidationMessageFor(model => model.CategoryDescription, String.Empty, new { @class = "font-red-thunderbird" })
+                    </div>
+                </div>
+            </div>
+            <div class="form-actions">
+                <div class="row">
+                    <div class="col-md-offset-3 col-md-9">
+                        <button type="submit" class="btn btn-circle green">Create</button>
+                        @Html.ActionLink("Cancel", "Index", "Category", null, new { @type = "button", @class = "btn btn-circle grey-salsa btn-outline" })
+                    </div>
+                </div>
+            </div>
+        }
+        <!-- END FORM-->
+    </div>
 </div>
