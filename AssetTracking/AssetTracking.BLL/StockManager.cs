@@ -19,10 +19,11 @@ namespace AssetTracking.BLL
             _stockRepository = new StockRepository();
         }
 
-        public StockManager(IStockRepository repository)
+        public StockManager(IStockRepository stockRepository)
         {
-            _stockRepository = repository;
+            _stockRepository = stockRepository;
         }
+
         public bool Add(AssetPurchaseHeader entity)
         {
            return _stockRepository.Add(entity);

@@ -77,7 +77,8 @@
     
 
 
-    $("#btn_stock_add").click(function() {
+
+    $("#btn_stock_add").click(function () {
         var stockDetail = getStockDetail();
 
         var index = $("#tbl_stock tr").length;
@@ -113,9 +114,22 @@
     }
 
 
+
+
+
+
+
+
+
+
     $(document).on('click', '.btn-delete', function() {
         if (confirm("Are you sure to delete?")) {
             $(this).closest('tr').remove();
         }
     });
+
+
+
+
+
 }

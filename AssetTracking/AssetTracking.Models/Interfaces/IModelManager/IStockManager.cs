@@ -7,7 +7,7 @@ using AssetTracking.Models.Models;
 
 namespace AssetTracking.Models.Interfaces.IModelManager
 {
-    public interface IStockManager:IManager<AssetPurchaseHeader>
+    public interface IStockManager : IManager<AssetPurchaseHeader>
     {
     }
 }

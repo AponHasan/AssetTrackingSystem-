@@ -64,7 +64,7 @@
                 <div class="form-group">
                     @Html.Label("ProductID", "Product", htmlAttributes: new { @class = "control-label col-md-2" })
                     <div class="col-md-10">
-                        @Html.DropDownList("ProductID", new SelectList(new List<SelectListItem>()), "Select Product", htmlAttributes: new { @class = "" })
+                        @Html.DropDownList("ProductID", new SelectList(new List<SelectListItem>()), "Select Product", htmlAttributes: new { @class = "form-control" })
                     </div>
                 </div>
             </div>
@@ -97,6 +97,24 @@
 
                 </thead>
                 <tbody id="tbl_stock"></tbody>
+                @*<tr>
+                    <td>
+                        <input type="hidden" name="AssetPurchaseDetail[1].ProductID" value="2" />
+                        <input type="hidden" name="AssetPurchaseDetail[1].Quantity" value="6" />
+                        <input type="hidden" name="AssetPurchaseDetail[1].UnitPrice" value="10" />
+                        sdfgdf
+                    </td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="hidden" name="AssetPurchaseDetail[2].ProductID" value="2" />
+                        <input type="hidden" name="AssetPurchaseDetail[2].Quantity" value="6" />
+                        <input type="hidden" name="AssetPurchaseDetail[].UnitPrice" value="10" />
+                        sdfsdfsd
+                    </td>
+                    <td>5</td>
+                </tr>*@
             </table>
         </div>
         <div class="form-group">

@@ -10,13 +10,16 @@ using AssetTracking.Models.Models;
 
 namespace AssetTracking.DAL
 {
-    public class StockRepository:CommonRepository<AssetPurchaseHeader>,IStockRepository
+    public class StockRepository : CommonRepository<AssetPurchaseHeader>, IStockRepository
     {
-        public StockRepository() : base(new AssetTrackDbContext())
+        public StockRepository()
+            : base(new AssetTrackDbContext())
         {
         }
-        public StockRepository(DbContext db): base(db)
+        public StockRepository(DbContext db)
+            : base(db)
         {
         }
+
     }
 }

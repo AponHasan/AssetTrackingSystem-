@@ -7,7 +7,7 @@ using AssetTracking.Models.Models;
 
 namespace AssetTracking.Models.Interfaces.IModelRepository
 {
-    public interface IStockRepository:ICommonRepository<AssetPurchaseHeader>
+    public interface IStockRepository : ICommonRepository<AssetPurchaseHeader>
     {
     }
 }

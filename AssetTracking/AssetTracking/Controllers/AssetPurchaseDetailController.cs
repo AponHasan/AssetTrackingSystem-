@@ -16,13 +16,13 @@ namespace AssetTracking.Controllers
     {
         private AssetTrackDbContext db = new AssetTrackDbContext();
         private AssetPurchaseDetailManager _assetPurchaseDetailManager;
-        private SubCategoryManager _subCategoryManager;
+        private ProductManager _productManager;
         private AssetPurchaseHeaderManager _assetPurchaseHeaderManager;
         private WarrantyPeriodUnitManager _warrantyPeriodUnitManager;
 
         public AssetPurchaseDetailController()
         {
-            _subCategoryManager = new SubCategoryManager();
+            _productManager = new ProductManager();
             _assetPurchaseHeaderManager = new AssetPurchaseHeaderManager();
             _warrantyPeriodUnitManager = new WarrantyPeriodUnitManager();
             _assetPurchaseDetailManager = new AssetPurchaseDetailManager();
@@ -58,8 +58,8 @@ namespace AssetTracking.Controllers
             //ViewBag.SubCategoryID = new SelectList(db.SubCategories, "SubCategoryID", "SubCategoryName");
             var assetPurchaseHeader = _assetPurchaseHeaderManager.GetAll();
             ViewBag.AssetPurchaseHeaderID = new SelectList(assetPurchaseHeader, "AssetPurchaseHeaderID", "AssetPurchaseHeaderID");
-            var subCategories = _subCategoryManager.GetAll();
-            ViewBag.SubCategoryID = new SelectList(subCategories, "SubCategoryID", "SubCategoryName");
+            var productList = _productManager.GetAll();
+            ViewBag.ProductID = new SelectList(productList, "ProductID", "ProductName");
             var warrantyPeriodID = _warrantyPeriodUnitManager.GetAll();
             ViewBag.WarrantyPeriodUnitID = new SelectList(warrantyPeriodID, "WarrantyPeriodUnitID", "WarrantyPeriodUnitName");
             return View();
@@ -80,8 +80,8 @@ namespace AssetTracking.Controllers
 
             var assetPurchaseHeader = _assetPurchaseHeaderManager.GetAll();
             ViewBag.AssetPurchaseHeaderID = new SelectList(assetPurchaseHeader, "AssetPurchaseHeaderID", "AssetPurchaseHeaderID");
-            var subCategories = _subCategoryManager.GetAll();
-            ViewBag.SubCategoryID = new SelectList(subCategories, "SubCategoryID", "SubCategoryName");
+            var productList = _productManager.GetAll();
+            ViewBag.ProductID = new SelectList(productList, "ProductID", "ProductName");
             var warrantyPeriodID = _warrantyPeriodUnitManager.GetAll();
             ViewBag.WarrantyPeriodUnitID = new SelectList(warrantyPeriodID, "WarrantyPeriodUnitID", "WarrantyPeriodUnitName");
             return View(assetpurchasedetail);
@@ -101,8 +101,8 @@ namespace AssetTracking.Controllers
             }
             var assetPurchaseHeader = _assetPurchaseHeaderManager.GetAll();
             ViewBag.AssetPurchaseHeaderID = new SelectList(assetPurchaseHeader, "AssetPurchaseHeaderID", "AssetPurchaseHeaderID");
-            var subCategories = _subCategoryManager.GetAll();
-            ViewBag.SubCategoryID = new SelectList(subCategories, "SubCategoryID", "SubCategoryName");
+            var productList = _productManager.GetAll();
+            ViewBag.ProductID = new SelectList(productList, "ProductID", "ProductName");
             var warrantyPeriodID = _warrantyPeriodUnitManager.GetAll();
             ViewBag.WarrantyPeriodUnitID = new SelectList(warrantyPeriodID, "WarrantyPeriodUnitID", "WarrantyPeriodUnitName");
             return View(assetpurchasedetail);
@@ -122,8 +122,8 @@ namespace AssetTracking.Controllers
             }
             var assetPurchaseHeader = _assetPurchaseHeaderManager.GetAll();
             ViewBag.AssetPurchaseHeaderID = new SelectList(assetPurchaseHeader, "AssetPurchaseHeaderID", "AssetPurchaseHeaderID");
-            var subCategories = _subCategoryManager.GetAll();
-            ViewBag.SubCategoryID = new SelectList(subCategories, "SubCategoryID", "SubCategoryName");
+            var productList = _productManager.GetAll();
+            ViewBag.ProductID = new SelectList(productList, "ProductID", "ProductName");
             var warrantyPeriodID = _warrantyPeriodUnitManager.GetAll();
             ViewBag.WarrantyPeriodUnitID = new SelectList(warrantyPeriodID, "WarrantyPeriodUnitID", "WarrantyPeriodUnitName");
             return View(assetpurchasedetail);

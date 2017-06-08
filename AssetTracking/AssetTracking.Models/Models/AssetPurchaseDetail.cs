@@ -41,7 +41,7 @@ namespace AssetTracking.Models.Models
         //public virtual WarrantyPeriodUnit WarrantyPeriodUnit { get; set; }
         public virtual AssetPurchaseHeader AssetPurchaseHeader { get; set; }
         //public virtual SubCategory SubCategory { get; set; }
-        //public virtual Category Category { get; set; }
+        public virtual Product Products { get; set; }
         public virtual ICollection<AssetPurchaseDetailSerialNumber> AssetPurchaseDetailSerialNumbers { get; set; }
     }
 }
