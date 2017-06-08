@@ -23,31 +23,58 @@
 
         });
     });
-    $("#SubCategoryID").change(function() {
-        var subcategoryId = $("#SubCategoryID").val();
-        if (subcategoryId == "") {
-            $("#ProductID").empty();
-            var option = "<option value=''>Select Product</option>";
-            $("#ProductID").append(option);
+    $("#CategoryID").change(function () {
+        var categoryId = $("#CategoryID").val();
+        if (categoryId == "") {
+            $("#SubCategoryID").empty();
+            var option = "<option value=''>Select Sub Category</option>";
+            $("#SubCategoryID").append(option);
             return;
         }
 
-        var jsonData = { subcategoryId: subcategoryId };
+        var jsonData = { categoryId: categoryId };
         $.ajax({
-            url: "/Product/GetProductBySubCategory",
+            url: "/Category/GetSubCategoryByCategory",
             type: "POST",
             data: JSON.stringify(jsonData),
             contentType: "application/json",
-            success: function(response) {
-                $("#ProductID").empty();
-                $.each(response, function(key, value) {
-                    var optionText = "<option value='" + value.ProductID + "'>" + value.ProductName + "</option>";
-                    $("#ProductID").append(optionText);
+            success: function (response) {
+                $("#SubCategoryID").empty();
+                $.each(response, function (key, value) {
+                    var optionText = "<option value='" + value.SubCategoryID + "'>" + value.SubCategoryName + "</option>";
+                    $("#SubCategoryID").append(optionText);
                 });
             }
 
         });
     });
+
+        $("#SubCategoryID").change(function () {
+            var subcategoryId = $("#SubCategoryID").val();
+            if (subcategoryId == "") {
+                $("#ProductID").empty();
+                var option = "<option value=''>Select Product</option>";
+                $("#ProductID").append(option);
+                return;
+            }
+
+            var jsonData = { subcategoryId: subcategoryId };
+            $.ajax({
+                url: "/Product/GetProductBySubCategory",
+                type: "POST",
+                data: JSON.stringify(jsonData),
+                contentType: "application/json",
+                success: function (response) {
+                    $("#ProductID").empty();
+                    $.each(response, function (key, value) {
+                        var optionText = "<option value='" + value.ProductID + "'>" + value.ProductName + "</option>";
+                        $("#ProductID").append(optionText);
+                    });
+                }
+
+            });
+        });
+    
 
 
     $("#btn_stock_add").click(function() {
