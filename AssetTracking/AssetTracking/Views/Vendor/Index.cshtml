@@ -1,34 +1,58 @@
 ﻿@model IEnumerable<AssetTracking.Models.Models.Vendor>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Vendor";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.VendorName)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.VendorName)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.VendorID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.VendorID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.VendorID })
-        </td>
-    </tr>
-}
-
-</table>
+<div class="row">
+    <div class="col-md-12">
+        <!-- BEGIN PORTLET-->
+        <div class="portlet box green">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="fa fa-comments"></i>Vendor Index
+                </div>
+                <div class="tools">
+                    <a href="javascript:;" class="collapse"> </a>
+                    <a href="#portlet-config" data-toggle="modal" class="config"> </a>
+                    <a href="javascript:;" class="reload"> </a>
+                    <a href="javascript:;" class="remove"> </a>
+                </div>
+            </div>
+            <div class="portlet-body">
+                <p>
+                    @Html.ActionLink("Create New", "Create", "Vendor", null, new { @class = "btn btn-sm green-jungle" })
+                </p>
+                <div class="table-scrollable">
+                    <table class="table table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.VendorName)
+                                </th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.VendorName)
+                                    </td>
+                                    <td>
+                                        @Html.ActionLink("Edit", "Edit", "Vendor", new { id = item.VendorID }, new { @class = "label label-sm label-info" }) |
+                                        @Html.ActionLink("Details", "Details", "Vendor", new { id = item.VendorID }, new { @class = "label label-sm label-warning" }) |
+                                        @Html.ActionLink("Delete", "Delete", "Vendor", new { id = item.VendorID }, new { @class = "label label-sm label-danger" })
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!-- END PORTLET-->
+    </div>
+</div>
