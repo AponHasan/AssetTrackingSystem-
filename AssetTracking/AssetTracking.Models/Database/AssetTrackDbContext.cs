@@ -36,6 +36,6 @@ namespace AssetTracking.Models.Database
         public DbSet<Product> Products { get; set; }
         public DbSet<AssetPurchaseDetailSerialNumber> AssetPurchaseDetailSerialNumbers { get; set; }
         public DbSet<WarrantyPeriodUnit> WarrantyPeriodUnits { get; set; }
-
+        public DbSet<User> Users { get; set; }
     }
 }

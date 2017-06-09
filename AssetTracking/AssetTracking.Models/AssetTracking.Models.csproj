@@ -123,6 +123,10 @@
     <Compile Include="Migrations\201706082152424_addUserModel.Designer.cs">
       <DependentUpon>201706082152424_addUserModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706090457199_user.cs" />
+    <Compile Include="Migrations\201706090457199_user.Designer.cs">
+      <DependentUpon>201706090457199_user.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AssetLocation.cs" />
     <Compile Include="Models\AssetPurchaseDetail.cs" />
@@ -177,6 +181,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706082152424_addUserModel.resx">
       <DependentUpon>201706082152424_addUserModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706090457199_user.resx">
+      <DependentUpon>201706090457199_user.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
