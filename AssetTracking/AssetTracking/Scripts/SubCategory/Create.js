@@ -15,6 +15,8 @@
             contentType: "application/json",
             success: function(response) {
                 $("#CategoryID").empty();
+                var optionText = "<option value=''>Select Category</option>";
+                $("#CategoryID").append(optionText);
                 $.each(response, function(key, value) {
                     var optionText = "<option value='" + value.CategoryID + "'>" + value.CategoryName + "</option>";
                     $("#CategoryID").append(optionText);

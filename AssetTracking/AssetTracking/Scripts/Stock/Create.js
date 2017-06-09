@@ -15,6 +15,8 @@
             contentType: "application/json",
             success: function (response) {
                 $("#CategoryID").empty();
+                var optionText = "<option value=''>Select Category</option>";
+                $("#CategoryID").append(optionText);
                 $.each(response, function (key, value) {
                     var optionText = "<option value='" + value.CategoryID + "'>" + value.CategoryName + "</option>";
                     $("#CategoryID").append(optionText);
@@ -40,6 +42,8 @@
             contentType: "application/json",
             success: function (response) {
                 $("#SubCategoryID").empty();
+                var optionText = "<option value=''>Select Sub Category</option>";
+                $("#SubCategoryID").append(optionText);
                 $.each(response, function (key, value) {
                     var optionText = "<option value='" + value.SubCategoryID + "'>" + value.SubCategoryName + "</option>";
                     $("#SubCategoryID").append(optionText);
@@ -66,6 +70,8 @@
                 contentType: "application/json",
                 success: function (response) {
                     $("#ProductID").empty();
+                    var optionText = "<option value=''>Select Product</option>";
+                    $("#ProductID").append(optionText);
                     $.each(response, function (key, value) {
                         var optionText = "<option value='" + value.ProductID + "'>" + value.ProductName + "</option>";
                         $("#ProductID").append(optionText);
