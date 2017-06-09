@@ -26,8 +26,12 @@ namespace AssetTracking.Controllers
         }
         public ActionResult Index()
         {
-            var org = _organizationManager.GetAll();
-            return View(org.ToList());
+            if (Session["LogedUserID"] != null)
+            {
+                var org = _organizationManager.GetAll();
+                return View(org.ToList());
+            }
+            return RedirectToAction("Login", "Admin");
         }
 
         // GET: /Organization/Details/5

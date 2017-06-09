@@ -1,0 +1,52 @@
+﻿@model AssetTracking.Models.Models.User
+
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="logintemplate">
+    @using (Html.BeginForm("Login", "Admin", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+        <div class="login-wrap">
+            <div class="login-html">
+                <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">User Login</label>
+                <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab"></label>
+                <div class="login-form">
+                    <div class="sign-in-htm">
+                        <div class="group">
+                            <label for="user" class="label">Username</label>
+                            @Html.TextBoxFor(model => model.UserName, new { @class = "from-control", @placeholder = "User Name", style = "width:385px;height: 38px;border-radius: 6px;background-color:white;color:black;padding-top:5px;padding-buttom:5px;margin-top:5px;margin-bottom:5px;" })
+                        </div>
+                        <div class="group">
+                            <label for="pass" class="label">Password</label>
+                            @Html.TextBoxFor(model => model.Password, new { @class = "from-control", @placeholder = "Password", type = "Password", style = "width:385px;height: 38px;border-radius: 6px;background-color:white;color:black;padding-top:5px;padding-buttom:5px;margin-top:5px;margin-bottom:5px;" })
+                        </div>
+                        @*<div class="group">
+                                <input id="check" type="checkbox" class="check" checked>
+                                <label for="check"><span class="icon"></span> Keep me Signed in</label>
+                            </div>*@
+                        <div class="group">
+                            <input type="submit" class="button" value="Sign In">
+                        </div>
+                    </div>
+                    <div class="sign-up-htm">
+                        <div class="group">
+                            <label for="usn" class="label">User Id</label>
+                            <input id="usn" type="text" class="input">
+                        </div>
+                        <div class="group">
+                            <label for="pass" class="label">Email Address</label>
+                            <input id="pass" type="text" class="input">
+                        </div>
+                        <div class="group">
+                            <input type="submit" class="button" value="Submit">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
