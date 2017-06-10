@@ -83,8 +83,8 @@
     
 
 
+        $('#Quantity').bind('keyup', function () {
 
-    $("#btn_stock_add").click(function () {
         var stockDetail = getStockDetail();
 
         var index = $("#tbl_stock tr").length;
@@ -104,7 +104,7 @@
         var unitPrice = $("#UnitPrice").val();
         var productName = $("#ProductID option:selected").text();
 
-        if (productId == "") {
+        if (productId == "" || quantity == "" || unitPrice == "") {
             return null;
         }
 

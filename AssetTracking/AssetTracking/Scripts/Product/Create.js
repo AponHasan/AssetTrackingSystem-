@@ -29,7 +29,7 @@
         var categoryId = $("#CategoryID").val();
         if (categoryId == "") {
             $("#SubCategoryID").empty();
-            var option = "<option value=''>Select Sub Category</option>";
+            var option = "<option value=''>Select Sub-Category</option>";
             $("#SubCategoryID").append(option);
             return;
         }
@@ -42,7 +42,7 @@
             contentType: "application/json",
             success: function(response) {
                 $("#SubCategoryID").empty();
-                var optionText = "<option value=''>Select Sub Category</option>";
+                var optionText = "<option value=''>Select Sub-Category</option>";
                 $("#SubCategoryID").append(optionText);
                 $.each(response, function(key, value) {
                     var optionText = "<option value='" + value.SubCategoryID + "'>" + value.SubCategoryName + "</option>";
