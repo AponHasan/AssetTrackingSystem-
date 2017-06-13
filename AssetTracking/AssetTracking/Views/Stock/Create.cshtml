@@ -4,88 +4,7 @@
     ViewBag.Title = "Create Stock";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-@**@
-@*<h2>Create</h2>*@
 
-@*@using (Html.BeginForm()) *@
-@*{*@
-@*    @Html.AntiForgeryToken()*@
-@*    *@
-@*    <div class="form-horizontal">*@
-@*        <h4>AssetPurchaseHeader</h4>*@
-@*        <hr />*@
-@*        @Html.ValidationSummary(true)*@
-@**@
-@*        <div class="col-md-12">*@
-@**@
-@*            <div class="form-group">*@
-@*                @Html.LabelFor(c => c.PurchasedOn, htmlAttributes: new { @class = "control-label col-md-2" })*@
-@*                <div class="col-md-10">*@
-@*                    @Html.EditorFor(c => c.PurchasedOn)*@
-@*                </div>*@
-@*            </div>*@
-@*            <div class="form-group">*@
-@*                @Html.Label("VendorID", "Vendor", htmlAttributes: new { @class = "control-label col-md-2" })*@
-@*                <div class="col-md-10">*@
-@*                    @Html.DropDownList("VendorID", ViewBag.ProductCategories as SelectList, "Select...", htmlAttributes: new { @class = "" })*@
-@*                </div>*@
-@*            </div>*@
-@*            <div class="form-group">*@
-@*                @Html.Label("OrganizationBranchID", "OrganizationBranch", htmlAttributes: new { @class = "control-label col-md-2" })*@
-@*                <div class="col-md-10">*@
-@*                    @Html.DropDownList("OrganizationBranchID", ViewBag.ProductCategories as SelectList, "Select...", htmlAttributes: new { @class = "" })*@
-@*                </div>*@
-@*            </div>*@
-@*        </div>*@
-@*        <div class="col-md-12">*@
-@*            <div class="col-md-6">*@
-@*                <div class="form-group">*@
-@*                    @#1#Html.LabelFor(model => model.AssetPurchaseDetails.SubCategory.Category.GeneralCategory.GeneralCategoryID, "GeneralCategoryID", new { @class = "control-label col-md-2" })#1#*@
-@*                    @Html.Label("GeneralCategory", htmlAttributes: new {@class = "control-label col-md-2"})*@
-@*                    <div class="col-md-10">*@
-@*                        @Html.DropDownList("GeneralCategoryID", ViewBag.generalCategoryID as SelectList, "Select General Category", htmlAttributes: new {@class = ""})*@
-@*                    </div>*@
-@*                </div>*@
-@*                <div class="form-group">*@
-@*                    @#1#Html.LabelFor(model => model.SubCategory.Category.CategoryID, "CategoryID", new { @class = "control-label col-md-2" })#1#*@
-@*                    @Html.Label("Category", htmlAttributes: new {@class = "control-label col-md-2"})*@
-@*                    <div class="col-md-10">*@
-@*                        @Html.DropDownList("CategoryID", new SelectList(new List<SelectListItem>()), "Select Category", htmlAttributes: new {@class = ""})*@
-@**@
-@*                    </div>*@
-@*                </div>*@
-@*                <div class="form-group">*@
-@*                    @Html.Label("SubCategory", htmlAttributes: new {@class = "control-label col-md-2"})*@
-@*                    @#1#Html.LabelFor(model => model.SubCategoryID, "SubCategoryID", new { @class = "control-label col-md-2" })#1#*@
-@*                    <div class="col-md-10">*@
-@*                        @Html.DropDownList("SubCategoryID", new SelectList(new List<SelectListItem>()), "Select Category", htmlAttributes: new {@class = ""})*@
-@*                    </div>*@
-@*                </div>*@
-@*                <div class="form-group">*@
-@*                    @Html.Label("ProductID", "Product", htmlAttributes: new {@class = "control-label col-md-2"})*@
-@*                    <div class="col-md-10">*@
-@*                        @Html.DropDownList("ProductID", new SelectList(new List<SelectListItem>()), "Select Product", htmlAttributes: new {@class = "form-control"})*@
-@*                    </div>*@
-@*                </div>*@
-@*            </div>*@
-@*            <div class="col-md-6">*@
-@*                <div class="form-group">*@
-@*                    @Html.Label("Quantity", htmlAttributes: new {@class = "control-label col-md-2"})*@
-@*                    <div class="col-md-10">*@
-@*                        @Html.TextBox("Quantity", "", new {htmlAttributes = new {@class = "form-control"}})*@
-@*                    </div>*@
-@*                </div>*@
-@*                <div class="form-group">*@
-@*                    @Html.Label("UnitPrice", htmlAttributes: new {@class = "control-label col-md-2"})*@
-@*                    <div class="col-md-10">*@
-@*                        @Html.TextBox("UnitPrice", "", new {htmlAttributes = new {@class = "form-control"}})*@
-@*                    </div>*@
-@*                </div>*@
-@*           }*@
-@*             </div>*@
-@*            <input type="button" id="btn_stock_add" value="Add"/>*@
-@*        </div>*@
-        <!-- BEGIN FORM DESIGN -->
         <div class="portlet box green">
             <div class="portlet-title">
                 <div class="caption">
@@ -208,7 +127,7 @@
                                     </span>
                                     @Html.TextBox("UnitPrice", null, new { @class = "form-control input-circle-right", @placeholder = "Enter Unit Price" })
                                 </div>
-                                @*                                @Html.ValidationMessageFor(model => model.UnitPrice, String.Empty, new { @class = "font-red-thunderbird" })*@
+                               
                             </div>
                         </div>
                     </div>
@@ -220,17 +139,34 @@
                                     <span class="input-group-addon input-circle-left">
                                         <i class="fa fa-font" aria-hidden="true"></i>
                                     </span>
-                                    @Html.TextBox("Quantity", null, new { @class = "form-control input-circle-right", @placeholder = "Enter Quantity" })
+                                    @Html.TextBox("Quantity", null, new {@class = "form-control input-circle-right", @placeholder = "Enter Quantity"})
                                 </div>
-@*                                @Html.ValidationMessageFor(model => model.Quantity, String.Empty, new { @class = "font-red-thunderbird" })*@
+                                
                             </div>
                         </div>
                     </div>
+                    <hr/>
+                    <input type="button" id="btn_stock_add" value="Add" />
+        <div class="row">
+            <table>
+                <thead>
+                <tr>
+                    <th>Product</th>                   
+                    <th>Quantity</th>
+                    <th>Unit Price</th>                  
+                    <th>Totel Price</th>
+                </tr>
+
+                </thead>
+                <tbody id="tbl_stock"></tbody>
+            </table>
+        </div>
                     <div class="form-actions">
                         <div class="row">
+                            
                             <div class="col-md-offset-3 col-md-9">
                                 <button type="submit" class="btn btn-circle green">Create</button>
-                                @Html.ActionLink("Cancel", "Index", "Stock", null, new { @type = "button", @class = "btn btn-circle grey-salsa btn-outline" })
+                                @Html.ActionLink("Cancel", "Index", "Stock", null, new {@type = "button", @class = "btn btn-circle grey-salsa btn-outline"})
                             </div>
                         </div>
                     </div>
@@ -258,7 +194,6 @@
                 <input type="submit" value="Create" class="btn btn-default"/>
             </div>
         </div>
-    </div>
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>

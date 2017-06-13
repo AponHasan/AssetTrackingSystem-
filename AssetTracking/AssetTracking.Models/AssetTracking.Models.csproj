@@ -53,6 +53,7 @@
     <Compile Include="Interfaces\IModelManager\IAssetPurchaseDetailManager.cs" />
     <Compile Include="Interfaces\IModelManager\IAssetPurchaseDetailSerialNumberManager.cs" />
     <Compile Include="Interfaces\IModelManager\IAssetPurchaseHeaderManager.cs" />
+    <Compile Include="Interfaces\IModelManager\IAssetPurchaseManager.cs" />
     <Compile Include="Interfaces\IModelManager\ICategoryManager.cs" />
     <Compile Include="Interfaces\IModelManager\IDepartmentManager.cs" />
     <Compile Include="Interfaces\IModelManager\IDesignationManager.cs" />
@@ -70,6 +71,7 @@
     <Compile Include="Interfaces\IModelRepository\IAssetPurchaseDetailRepository.cs" />
     <Compile Include="Interfaces\IModelRepository\IAssetPurchaseDetailSerialNumberRepository.cs" />
     <Compile Include="Interfaces\IModelRepository\IAssetPurchaseHeaderRepository.cs" />
+    <Compile Include="Interfaces\IModelRepository\IAssetPurchaseRepository.cs" />
     <Compile Include="Interfaces\IModelRepository\ICategoryRepogitory.cs" />
     <Compile Include="Interfaces\IModelRepository\IDepartmentRepository.cs" />
     <Compile Include="Interfaces\IModelRepository\IDesignationRepository.cs" />

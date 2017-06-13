@@ -16,6 +16,7 @@ namespace AssetTracking.Models.Models
 
         [Required]
         [Display(Name = "General Category Code")]
+        [RegularExpression(@"^\S*$", ErrorMessage = "No white space allowed")]
         public string GeneralCategoryCode { get; set; }
 
         public virtual ICollection<Category> Categories { get; set; }

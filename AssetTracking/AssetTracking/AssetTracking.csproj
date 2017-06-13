@@ -244,6 +244,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\AssetLocationController.cs" />
+    <Compile Include="Controllers\AssetPurchaseController.cs" />
     <Compile Include="Controllers\AssetPurchaseDetailController.cs" />
     <Compile Include="Controllers\AssetPurchaseDetailSerialNumbeController.cs" />
     <Compile Include="Controllers\AssetPurchaseHeaderController.cs" />
@@ -355,6 +356,11 @@
     <Content Include="Views\Product\Index.cshtml" />
     <Content Include="Views\Shared\_LayoutAdmin.cshtml" />
     <Content Include="Views\Admin\Login.cshtml" />
+    <Content Include="Views\AssetPurchase\Create.cshtml" />
+    <Content Include="Views\AssetPurchase\Delete.cshtml" />
+    <Content Include="Views\AssetPurchase\Details.cshtml" />
+    <Content Include="Views\AssetPurchase\Edit.cshtml" />
+    <Content Include="Views\AssetPurchase\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

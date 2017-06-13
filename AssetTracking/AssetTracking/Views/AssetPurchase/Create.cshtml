@@ -1,0 +1,203 @@
+﻿@model AssetTracking.Models.Models.AssetPurchaseHeader
+
+@{
+    ViewBag.Title = "Create Stock";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="portlet box green">
+    <div class="portlet-title">
+        <div class="caption">
+            <i class="fa fa-gift"></i>Create Stock
+        </div>
+        <div class="tools">
+            <a href="javascript:;" class="collapse"> </a>
+            <a href="#portlet-config" data-toggle="modal" class="config"> </a>
+            <a href="javascript:;" class="reload"> </a>
+            <a href="javascript:;" class="remove"> </a>
+        </div>
+    </div>
+    <div class="portlet-body form">
+        <!-- BEGIN FORM-->
+        @using (Html.BeginForm("Create", "AssetPurchase", FormMethod.Post, new { @class = "form-horizontal" }))
+        {
+            @Html.AntiForgeryToken()
+            <div class="form-body">
+                <div class="form-group">
+                    <label class="col-md-3 control-label">Purchased Date</label>
+                    <div class="col-md-4">
+                        <div class="input-group">
+                            <span class="input-group-addon input-circle-left">
+                                <i class="fa fa-font" aria-hidden="true"></i>
+                            </span>
+                            @Html.TextBoxFor(model => model.PurchasedOn, new { @class = "form-control input-circle-right", @placeholder = "Enter Purchased Date" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-body">
+                <div class="form-group">
+                    <label class="col-md-3 control-label">Vendor</label>
+                    <div class="col-md-4">
+                        @Html.ValidationSummary(true)
+                        <div class="input-group">
+                            <span class="input-group-addon input-circle-left">
+                                <i class="fa fa-building-o" aria-hidden="true"></i>
+                            </span>
+                            @Html.DropDownList("VendorID", ViewBag.VendorID as SelectList, "Select Vendor", htmlAttributes: new { @class = "form-control input-circle-right" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-body">
+                <div class="form-group">
+                    <label class="col-md-3 control-label">Organization Branch</label>
+                    <div class="col-md-4">
+                        @Html.ValidationSummary(true)
+                        <div class="input-group">
+                            <span class="input-group-addon input-circle-left">
+                                <i class="fa fa-building-o" aria-hidden="true"></i>
+                            </span>
+                            @Html.DropDownList("OrganizationBranchID", ViewBag.OrganizationBranchID as SelectList, "Select Organization Branch", htmlAttributes: new { @class = "form-control input-circle-right" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-body">
+                <div class="form-group">
+                    <label class="col-md-3 control-label">general Category</label>
+                    <div class="col-md-4">
+                        @Html.ValidationSummary(true)
+                        <div class="input-group">
+                            <span class="input-group-addon input-circle-left">
+                                <i class="fa fa-building-o" aria-hidden="true"></i>
+                            </span>
+                            @Html.DropDownList("GeneralCategoryID", ViewBag.GeneralCategoryID as SelectList, "Select General Category", htmlAttributes: new { @class = "form-control input-circle-right" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-body">
+                <div class="form-group">
+                    <label class="col-md-3 control-label">Category</label>
+                    <div class="col-md-4">
+                        @Html.ValidationSummary(true)
+                        <div class="input-group">
+                            <span class="input-group-addon input-circle-left">
+                                <i class="fa fa-building-o" aria-hidden="true"></i>
+                            </span>
+                            @Html.DropDownList("CategoryID", new SelectList(new List<SelectListItem>()), "Select Category", htmlAttributes: new { @class = "form-control input-circle-right" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-body">
+                <div class="form-group">
+                    <label class="col-md-3 control-label">Sub-Category</label>
+                    <div class="col-md-4">
+                        <div class="input-group">
+                            <span class="input-group-addon input-circle-left">
+                                <i class="fa fa-building" aria-hidden="true"></i>
+                            </span>
+                            @Html.DropDownList("SubCategoryID", new SelectList(new List<SelectListItem>()), "Select Category", htmlAttributes: new { @class = "form-control input-circle-right" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-body">
+                <div class="form-group">
+                    <label class="col-md-3 control-label">Product</label>
+                    <div class="col-md-4">
+                        <div class="input-group">
+                            <span class="input-group-addon input-circle-left">
+                                <i class="fa fa-building" aria-hidden="true"></i>
+                            </span>
+                            @Html.DropDownList("ProductID", new SelectList(new List<SelectListItem>()), "Select Product", htmlAttributes: new { @class = "form-control input-circle-right" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-body">
+                <div class="form-group">
+                    <label class="col-md-3 control-label">Unit Price</label>
+                    <div class="col-md-4">
+                        <div class="input-group">
+                            <span class="input-group-addon input-circle-left">
+                                <i class="fa fa-font" aria-hidden="true"></i>
+                            </span>
+                            @Html.TextBox("UnitPrice", null, new { @class = "form-control input-circle-right", @placeholder = "Enter Unit Price" })
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="form-body">
+                <div class="form-group">
+                    <label class="col-md-3 control-label">Quantity</label>
+                    <div class="col-md-4">
+                        <div class="input-group">
+                            <span class="input-group-addon input-circle-left">
+                                <i class="fa fa-font" aria-hidden="true"></i>
+                            </span>
+                            @Html.TextBox("Quantity", null, new { @class = "form-control input-circle-right", @placeholder = "Enter Quantity" })
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <hr />
+            <input type="button" id="btn_stock_add" value="Add" />
+            <div class="row">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Quantity</th>
+                            <th>Unit Price</th>
+                            <th>Totel Price</th>
+                        </tr>
+
+                    </thead>
+                    <tbody id="tbl_stock"></tbody>
+                </table>
+            </div>
+            <div class="form-actions">
+                <div class="row">
+
+                    <div class="col-md-offset-3 col-md-9">
+                        <button type="submit" class="btn btn-circle green">Create</button>
+                        @Html.ActionLink("Cancel", "Index", "AssetPurchase", null, new { @type = "button", @class = "btn btn-circle grey-salsa btn-outline" })
+                    </div>
+                </div>
+            </div>
+        }
+        <!-- END FORM-->
+    </div>
+</div>
+<hr />
+<div class="row">
+    <table>
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Unit Price</th>
+                <th>Totel Price</th>
+            </tr>
+
+        </thead>
+        <tbody id="tbl_stock"></tbody>
+    </table>
+</div>
+<div class="form-group">
+    <div class="col-md-offset-2 col-md-10">
+        <input type="submit" value="Create" class="btn btn-default" />
+    </div>
+</div>
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+@section scripts{
+
+    <script src="~/Scripts/Stock/Create_2.js"></script>
+}

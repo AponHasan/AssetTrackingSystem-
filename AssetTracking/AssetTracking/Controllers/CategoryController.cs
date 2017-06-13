@@ -66,7 +66,7 @@ namespace AssetTracking.Controllers
         public ActionResult Create([Bind(Include="CategoryID,GeneralCategoryID,CategoryName,CategoryCode,CategoryDescription")] Category category)
         {
             if (ModelState.IsValid)
-            {
+            {              
                 _categoryManager.Add(category);
                 return RedirectToAction("Index");
             }

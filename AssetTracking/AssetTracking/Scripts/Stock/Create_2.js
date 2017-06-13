@@ -83,41 +83,40 @@
     
 
 
-        $('#Quantity').bind('keyup', function () {
+        $("#btn_stock_add").click(function () {
+            var stockDetail = getStockDetail();
 
-        var stockDetail = getStockDetail();
+            var index = $("#tbl_stock tr").length;
 
-        var index = $("#tbl_stock tr").length;
+            var productCell = "<td><input type='hidden' name='AssetPurchaseDetails[" + index + "].ProductID' value='" + stockDetail.productId + "' /><input type='hidden' name='AssetPurchaseDetails[" + index + "].Quantity' value='" + stockDetail.quantity + "' /><input type='hidden' name='AssetPurchaseDetails[" + index + "].UnitPrice' value='" + stockDetail.unitPrice + "' />" + stockDetail.productName + "</td>";
+            var quantityCell = "<td>" + stockDetail.quantity + stockDetail.unitPrice + stockDetail.unitPrice * stockDetail.quantity + "</td>" + "<td><button type='button' class='btn btn-success btn-edit'>Edit</button>|<button type='button' class='btn btn-danger btn-delete'>Delete</button>" + "</td>";
 
-        var productCell = "<td><input type='hidden' name='AssetPurchaseDetails[" + index + "].ProductID' value='" + stockDetail.productId + "' /><input type='hidden' name='AssetPurchaseDetails[" + index + "].Quantity' value='" + stockDetail.quantity + "' /><input type='hidden' name='AssetPurchaseDetails[" + index + "].UnitPrice' value='" + stockDetail.unitPrice + "' />" + stockDetail.productName + "</td>";
-        var quantityCell = "<td>" + stockDetail.quantity + stockDetail.unitPrice + stockDetail.unitPrice * stockDetail.quantity + "</td>" + "<td><button type='button' class='btn btn-success btn-edit'>Edit</button>|<button type='button' class='btn btn-danger btn-delete'>Delete</button>" + "</td>";
+            var trItem = "<tr id='stock_" + index + "'>" + productCell + quantityCell + "</tr>";
 
-        var trItem = "<tr id='stock_" + index + "'>" + productCell + quantityCell + "</tr>";
+            $("#tbl_stock").append(trItem);
 
-        $("#tbl_stock").append(trItem);
+        });
 
-    });
+        function getStockDetail() {
+            var productId = $("#ProductID").val();
+            var quantity = $("#Quantity").val();
+            var unitPrice = $("#UnitPrice").val();
+            var productName = $("#ProductID option:selected").text();
 
-    function getStockDetail() {
-        var productId = $("#ProductID").val();
-        var quantity = $("#Quantity").val();
-        var unitPrice = $("#UnitPrice").val();
-        var productName = $("#ProductID option:selected").text();
+            if (productId == "") {
+                return null;
+            }
 
-        if (productId == "" || quantity == "" || unitPrice == "") {
-            return null;
+            var stock = {
+                productId: productId,
+                quantity: quantity,
+                unitPrice: unitPrice,
+                productName: productName
+
+            };
+            return stock;
+
         }
-
-        var stock = {
-            productId: productId,
-            quantity: quantity,
-            unitPrice: unitPrice,
-            productName: productName
-
-        };
-        return stock;
-
-    }
 
 
 
