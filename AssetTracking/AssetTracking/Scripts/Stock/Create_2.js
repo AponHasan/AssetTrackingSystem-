@@ -89,9 +89,11 @@
             var index = $("#tbl_stock tr").length;
 
             var productCell = "<td><input type='hidden' name='AssetPurchaseDetails[" + index + "].ProductID' value='" + stockDetail.productId + "' /><input type='hidden' name='AssetPurchaseDetails[" + index + "].Quantity' value='" + stockDetail.quantity + "' /><input type='hidden' name='AssetPurchaseDetails[" + index + "].UnitPrice' value='" + stockDetail.unitPrice + "' />" + stockDetail.productName + "</td>";
-            var quantityCell = "<td>" + stockDetail.quantity + stockDetail.unitPrice + stockDetail.unitPrice * stockDetail.quantity + "</td>" + "<td><button type='button' class='btn btn-success btn-edit'>Edit</button>|<button type='button' class='btn btn-danger btn-delete'>Delete</button>" + "</td>";
-
-            var trItem = "<tr id='stock_" + index + "'>" + productCell + quantityCell + "</tr>";
+            var quantityCell = "<td>" + stockDetail.quantity  +  "</td>";
+            var unitPriceCell = "<td>" + stockDetail.unitPrice + "</td>";
+            var totalPriceCell = "<td>" + stockDetail.unitPrice * stockDetail.quantity + "</td>";
+            var actionButtonCell = "<td><button type='button' class='btn btn-success btn-edit'>Edit</button>|<button type='button' class='btn btn-danger btn-delete'>Delete</button></td>";
+            var trItem = "<tr id='stock_" + index + "'>" + productCell + quantityCell + unitPriceCell+totalPriceCell+actionButtonCell+"</tr>";
 
             $("#tbl_stock").append(trItem);
 
@@ -104,6 +106,17 @@
             var productName = $("#ProductID option:selected").text();
 
             if (productId == "") {
+                alert("Please Select Product: ");
+                return null;
+
+            }
+            if (quantity == "") {
+                alert("Please Enter Quantity: " );
+                return null;
+
+            }
+            if (unitPrice == "") {
+                alert("Please Enter Unit-Price: " );
                 return null;
             }
 
@@ -117,14 +130,6 @@
             return stock;
 
         }
-
-
-
-
-
-
-
-
 
 
     $(document).on('click', '.btn-delete', function() {
