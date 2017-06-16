@@ -131,15 +131,41 @@
 
         }
 
+        var _trEdit = null;
+        $(document).on('click', '.btn-edit', function () {
+            _trEdit = $(this).closest('tr');
+            var ProductID = $(_trEdit).find('td:eq(0)').text();
+            var Quantity = $(_trEdit).find('td:eq(1)').text();
+            var UnitPrice = $(_trEdit).find('td:eq(2)').text();
+            
+
+            $('select[name="ProductID"]').val(ProductID);
+            $('input[name="Quantity"]').val(Quantity);
+            $('input[name="UnitPrice"]').val(UnitPrice);
+           
+            
+        });
+
+        $('#btn-update').click(function () {
+            if (_trEdit) {
+                var ProductID = $('input[name="ProductID"]').val();
+                var Quantity = $('input[name="Quantity"]').val();
+                var UnitPrice = $('input[name="UnitPrice"]').val();
+              
+
+                $(_trEdit).find('td:eq(0)').text(ProductID);
+                $(_trEdit).find('td:eq(1)').text(Quantity);
+                $(_trEdit).find('td:eq(2)').text(UnitPrice);
+
+                alert("Record has been updated!");
+                _trEdit = null;
+            }
+        });
 
     $(document).on('click', '.btn-delete', function() {
         if (confirm("Are you sure to delete?")) {
             $(this).closest('tr').remove();
         }
     });
-
-
-
-
 
 }

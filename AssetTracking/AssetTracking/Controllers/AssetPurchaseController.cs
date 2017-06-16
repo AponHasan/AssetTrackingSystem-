@@ -34,6 +34,8 @@ namespace AssetTracking.Controllers
             _organizationBranchManager = new OrganizationBranchManager();
             _vendorManager = new VendorManager();
         }
+
+
         // GET: /AssetPurchase/
         public ActionResult Index()
         {

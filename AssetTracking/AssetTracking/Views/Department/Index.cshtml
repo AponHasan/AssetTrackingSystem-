@@ -24,7 +24,7 @@
                     @Html.ActionLink("Create New", "Create", "Department", null, new { @class = "btn btn-sm green-jungle" })
                 </p>
                 <div class="table-scrollable">
-                    <table class="table table-striped table-hover">
+                    <table id="dataTablefunction" class="table table-striped table-hover">
                         <thead>
                             <tr>
                                 <th>
@@ -61,3 +61,6 @@
         <!-- END TABLE PORTLET-->
     </div>
 </div>
+@section scripts{
+    <script src="~/Scripts/DT.js"></script>
+}

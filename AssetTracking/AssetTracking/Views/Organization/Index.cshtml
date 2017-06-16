@@ -24,41 +24,41 @@
                     @Html.ActionLink("Create New", "Create", "Organization",null, new { @class= "btn btn-sm green-jungle"} )
                 </p>
                 <div class="table-scrollable">
-                    <table class="table table-striped table-hover">
+                    <table id="dataTablefunction" class="table table-striped table-hover">
                         <thead>
-                        <tr>
-                            <th>
-                                @Html.DisplayNameFor(model => model.OrganizationName)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.OrganizationShortName)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.OrganizationLocation)
-                            </th>
-                            <th>Actions</th>
-                        </tr>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.OrganizationName)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.OrganizationShortName)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.OrganizationLocation)
+                                </th>
+                                <th>Actions</th>
+                            </tr>
                         </thead>
                         <tbody>
-                        @foreach (var item in Model)
-                        {
-                            <tr>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.OrganizationName)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.OrganizationShortName)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.OrganizationLocation)
-                                </td>
-                                <td>
-                                    @Html.ActionLink("Edit", "Edit", "Organization", new {id = item.OrganizationID}, new {@class = "label label-sm label-info"}) |
-                                    @Html.ActionLink("Details", "Details", "Organization", new {id = item.OrganizationID}, new {@class = "label label-sm label-warning"}) |
-                                    @Html.ActionLink("Delete", "Delete", "Organization", new {id = item.OrganizationID}, new {@class = "label label-sm label-danger"})
-                                </td>
-                            </tr>
-                        }
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.OrganizationName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.OrganizationShortName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.OrganizationLocation)
+                                    </td>
+                                    <td>
+                                        @Html.ActionLink("Edit", "Edit", "Organization", new { id = item.OrganizationID }, new { @class = "label label-sm label-info" }) |
+                                        @Html.ActionLink("Details", "Details", "Organization", new { id = item.OrganizationID }, new { @class = "label label-sm label-warning" }) |
+                                        @Html.ActionLink("Delete", "Delete", "Organization", new { id = item.OrganizationID }, new { @class = "label label-sm label-danger" })
+                                    </td>
+                                </tr>
+                            }
                         </tbody>
                     </table>
                 </div>
@@ -67,3 +67,6 @@
         <!-- END PORTLET-->
     </div>
 </div>
+@section scripts{
+<script src="~/Scripts/DT.js"></script>
+}

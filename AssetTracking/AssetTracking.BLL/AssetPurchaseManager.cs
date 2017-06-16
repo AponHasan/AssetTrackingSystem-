@@ -53,5 +53,10 @@ namespace AssetTracking.BLL
         {
             return _assetPurchaseRepository.GetAll();
         }
+
+        public bool Add(ICollection<AssetPurchaseHeader> entity)
+        {
+            return _assetPurchaseRepository.Add(entity);
+        }
     }
 }

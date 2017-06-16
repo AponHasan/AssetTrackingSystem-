@@ -24,151 +24,162 @@
             @Html.AntiForgeryToken()
 
 
-    <div class="row">
-        <div class="form-body">
-            <div class="form-group">
-                <label class="col-md-3 control-label">Purchased Date</label>
-                <div class="col-md-4">
-                    <div class="input-group">
-                        <span class="input-group-addon input-circle-left">
-                            <i class="fa fa-font" aria-hidden="true"></i>
-                        </span>
-                        @Html.TextBoxFor(model => model.PurchasedOn, "{0:yyyy-MM-dd}", new {Type="date", @class = "form-control input-circle-right", @placeholder = "Enter Purchased Date" })
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="form-body">
-            <div class="form-group">
-                <label class="col-md-3 control-label">Vendor</label>
-                <div class="col-md-4">
-                    @Html.ValidationSummary(true)
-                    <div class="input-group">
-                        <span class="input-group-addon input-circle-left">
-                            <i class="fa fa-building-o" aria-hidden="true"></i>
-                        </span>
-                        @Html.DropDownList("VendorID", ViewBag.VendorID as SelectList, "Select Vendor", htmlAttributes: new { @class = "form-control input-circle-right" })
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="form-body">
-            <div class="form-group">
-                <label class="col-md-3 control-label">Organization Branch</label>
-                <div class="col-md-4">
-                    @Html.ValidationSummary(true)
-                    <div class="input-group">
-                        <span class="input-group-addon input-circle-left">
-                            <i class="fa fa-building-o" aria-hidden="true"></i>
-                        </span>
-                        @Html.DropDownList("OrganizationBranchID", ViewBag.OrganizationBranchID as SelectList, "Select Organization Branch", htmlAttributes: new { @class = "form-control input-circle-right" })
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="col-sm-12">
-            <div class="col-sm-6">
-                <div class="form-body">
-                    <div class="form-group">
-                        <label class="col-md-4 control-label">general Category</label>
-                        <div class="col-md-8">
-                            @Html.ValidationSummary(true)
-                            <div class="input-group">
-                                <span class="input-group-addon input-circle-left">
-                                    <i class="fa fa-building-o" aria-hidden="true"></i>
-                                </span>
-                                @Html.DropDownList("GeneralCategoryID", ViewBag.GeneralCategoryID as SelectList, "Select General Category", htmlAttributes: new { @class = "form-control input-circle-right" })
+            <div class="row">
+                <div class="col-sm-12">
+                    <h4>Asset Header</h4>
+                    <hr/>
+                    <div class="form-body">
+                        <div class="form-group">
+                            <label class="col-md-2 control-label">Purchased Date</label>
+                            <div class="col-md-6">
+                                <div class="input-group">
+                                    <span class="input-group-addon input-circle-left">
+                                            <i class="fa fa-calendar" aria-hidden="true"></i>
+                                        </span>
+                                    @Html.TextBoxFor(model => model.PurchasedOn, "{0:yyyy-MM-dd}", new {Type = "date", @class = "form-control input-circle-right ", @placeholder = "Enter Purchased Date"})
+                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="form-body">
-                    <div class="form-group">
-                        <label class="col-md-4 control-label">Category</label>
-                        <div class="col-md-8">
-                            @Html.ValidationSummary(true)
-                            <div class="input-group">
-                                <span class="input-group-addon input-circle-left">
-                                    <i class="fa fa-building-o" aria-hidden="true"></i>
-                                </span>
-                                @Html.DropDownList("CategoryID", new SelectList(new List<SelectListItem>()), "Select Category", htmlAttributes: new { @class = "form-control input-circle-right" })
+
+                    <div class="col-sm-6">
+                        <div class="form-body">
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">Vendor</label>
+                                <div class="col-md-8">
+                                    @Html.ValidationSummary(true)
+                                    <div class="input-group">
+                                        <span class="input-group-addon input-circle-left">
+                                            <i class="fa fa-building-o" aria-hidden="true"></i>
+                                        </span>
+                                        @Html.DropDownList("VendorID", ViewBag.VendorID as SelectList, "Select Vendor", htmlAttributes: new {@class = "form-control input-circle-right"})
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="form-body">
-                    <div class="form-group">
-                        <label class="col-md-4 control-label">Sub-Category</label>
-                        <div class="col-md-8">
-                            <div class="input-group">
-                                <span class="input-group-addon input-circle-left">
-                                    <i class="fa fa-building" aria-hidden="true"></i>
-                                </span>
-                                @Html.DropDownList("SubCategoryID", new SelectList(new List<SelectListItem>()), "Select Category", htmlAttributes: new { @class = "form-control input-circle-right" })
+                    <div class="col-sm-6">
+                        <div class="form-body">
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">Organization Branch</label>
+                                <div class="col-md-8">
+                                    @Html.ValidationSummary(true)
+                                    <div class="input-group">
+                                        <span class="input-group-addon input-circle-left">
+                                            <i class="fa fa-building-o" aria-hidden="true"></i>
+                                        </span>
+                                        @Html.DropDownList("OrganizationBranchID", ViewBag.OrganizationBranchID as SelectList, "Select Organization Branch", htmlAttributes: new {@class = "form-control input-circle-right"})
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-            </div>
-
-
-            <div class="col-sm-6">
-                <div class="form-body">
-                    <div class="form-group">
-                        <label class="col-md-4 control-label">Product</label>
-                        <div class="col-md-8">
-                            <div class="input-group">
-                                <span class="input-group-addon input-circle-left">
-                                    <i class="fa fa-building" aria-hidden="true"></i>
-                                </span>
-                                @Html.DropDownList("ProductID", new SelectList(new List<SelectListItem>()), "Select Product", htmlAttributes: new { @class = "form-control input-circle-right" })
+                <div class="col-sm-12">
+                    <h4>Asset Details</h4>
+                    <hr />
+                    <div class="col-sm-6">
+                        <div class="form-body">
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">general Category</label>
+                                <div class="col-md-8">
+                                    @Html.ValidationSummary(true)
+                                    <div class="input-group">
+                                        <span class="input-group-addon input-circle-left">
+                                                <i class="fa fa-building-o" aria-hidden="true"></i>
+                                            </span>
+                                        @Html.DropDownList("GeneralCategoryID", ViewBag.GeneralCategoryID as SelectList, "Select General Category", htmlAttributes: new {@class = "form-control input-circle-right"})
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="form-body">
-                    <div class="form-group">
-                        <label class="col-md-4 control-label">Unit Price</label>
-                        <div class="col-md-8">
-                            <div class="input-group">
-                                <span class="input-group-addon input-circle-left">
-                                    <i class="fa fa-font" aria-hidden="true"></i>
-                                </span>
-                                @Html.TextBox("UnitPrice", null, new { @class = "form-control input-circle-right", @placeholder = "Enter Unit Price" })
+                        <div class="form-body">
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">Category</label>
+                                <div class="col-md-8">
+                                    @Html.ValidationSummary(true)
+                                    <div class="input-group">
+                                        <span class="input-group-addon input-circle-left">
+                                                <i class="fa fa-building-o" aria-hidden="true"></i>
+                                            </span>
+                                        @Html.DropDownList("CategoryID", new SelectList(new List<SelectListItem>()), "Select Category", htmlAttributes: new {@class = "form-control input-circle-right"})
+                                    </div>
+                                </div>
                             </div>
-
                         </div>
-                    </div>
-                </div>
-                <div class="form-body">
-                    <div class="form-group">
-                        <label class="col-md-4 control-label">Quantity</label>
-                        <div class="col-md-8">
-                            <div class="input-group">
-                                <span class="input-group-addon input-circle-left">
-                                    <i class="fa fa-font" aria-hidden="true"></i>
-                                </span>
-                                @Html.TextBox("Quantity", null, new { @class = "form-control input-circle-right", @placeholder = "Enter Quantity" })
+                        <div class="form-body">
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">Sub-Category</label>
+                                <div class="col-md-8">
+                                    <div class="input-group">
+                                        <span class="input-group-addon input-circle-left">
+                                                <i class="fa fa-building" aria-hidden="true"></i>
+                                            </span>
+                                        @Html.DropDownList("SubCategoryID", new SelectList(new List<SelectListItem>()), "Select Category", htmlAttributes: new {@class = "form-control input-circle-right"})
+                                    </div>
+                                </div>
                             </div>
-
                         </div>
+
+                    </div>
+
+
+                    <div class="col-sm-6">
+                        <div class="form-body">
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">Product</label>
+                                <div class="col-md-8">
+                                    <div class="input-group">
+                                        <span class="input-group-addon input-circle-left">
+                                                <i class="fa fa-building" aria-hidden="true"></i>
+                                            </span>
+                                        @Html.DropDownList("ProductID", new SelectList(new List<SelectListItem>()), "Select Product", htmlAttributes: new { @name = "ProductID", @class = "form-control input-circle-right" })
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-body">
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">Unit Price</label>
+                                <div class="col-md-8">
+                                    <div class="input-group">
+                                        <span class="input-group-addon input-circle-left">
+                                                <i class="fa fa-font" aria-hidden="true"></i>
+                                            </span>
+                                        @Html.TextBox("UnitPrice", null, new { @name = "UnitPrice", @class = "form-control input-circle-right", @placeholder = "Enter Unit Price" })
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-body">
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">Quantity</label>
+                                <div class="col-md-8">
+                                    <div class="input-group">
+                                        <span class="input-group-addon input-circle-left">
+                                                <i class="fa fa-font" aria-hidden="true"></i>
+                                            </span>
+                                        @Html.TextBox("Quantity", null, new { @name = "Quantity", @class = "form-control input-circle-right", @placeholder = "Enter Quantity" })
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-sm-5">
+                    </div>
+                    <div class="col-sm-4">
+                        <hr/>
+                        <button type="button" style="margin-left: 50px;" id="btn_stock_add" class="btn btn-warning"> ADD <i class="fa fa-plus"></i></button>
+                        <button type="button" class="btn btn-success" id="btn-update">Update</button>
+                    </div>
+                    <div class="col-sm-3">
                     </div>
                 </div>
-
-            </div>
-            <div class="col-sm-5">
-            </div>
-            <div class="col-sm-4">
-                <hr />
-                <button type="button" style="margin-left: 50px;" id="btn_stock_add" class="btn btn-warning">   ADD   <i class="fa fa-plus"></i></button>
-            </div>
-            <div class="col-sm-3">
-            </div>
-        </div>
-    </div>
+                </div>
                 <hr />
 
             <div class="row" style="margin: 0px 0px 0px 0px; padding: 0px 0px 0px 0px;">

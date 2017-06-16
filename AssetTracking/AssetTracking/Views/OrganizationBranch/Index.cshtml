@@ -24,7 +24,7 @@
                     @Html.ActionLink("Create New", "Create", "OrganizationBranch", null, new { @class = "btn btn-sm green-jungle" })
                 </p>
                 <div class="table-scrollable">
-                    <table class="table table-striped table-hover">
+                    <table id="dataTablefunction" class="table table-striped table-hover">
                         <thead>
                             <tr>
                                 <th>
@@ -34,7 +34,7 @@
                                     @Html.DisplayNameFor(model => model.OrganizationBranchName)
                                 </th>
                                 <th>
-                                   @Html.DisplayNameFor(model => model.OrganizatioBranchShortName)
+                                    @Html.DisplayNameFor(model => model.OrganizatioBranchShortName)
                                 </th>
                                 <th>Actions</th>
                             </tr>
@@ -67,3 +67,6 @@
         <!-- END TABLE PORTLET-->
     </div>
 </div>
+@section scripts{
+    <script src="~/Scripts/DT.js"></script>
+}
