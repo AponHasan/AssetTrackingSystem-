@@ -26,17 +26,19 @@ namespace AssetTracking.Controllers
         }
         public ActionResult Index()
         {
-            //if (Session["LogedUserID"] != null)
-            //{
+            if (Session["LogedUserID"] != null)
+            {
                 var org = _organizationManager.GetAll();
                 return View(org.ToList());
-            //}
-            //return RedirectToAction("Login", "Admin");
+            }
+            return RedirectToAction("Login", "Admin");
         }
 
         // GET: /Organization/Details/5
         public ActionResult Details(int? id)
         {
+            if (Session["LogedUserID"] != null)
+            {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -47,12 +49,18 @@ namespace AssetTracking.Controllers
                 return HttpNotFound();
             }
             return View(organization);
+                }
+            return RedirectToAction("Login", "Admin");
         }
 
         // GET: /Organization/Create
         public ActionResult Create()
         {
+            if (Session["LogedUserID"] != null)
+            {
             return View();
+                }
+            return RedirectToAction("Login", "Admin");
         }
 
         // POST: /Organization/Create
@@ -62,20 +70,27 @@ namespace AssetTracking.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include="OrganizationID,OrganizationName,OrganizationShortName,OrganizationLocation")] Organization organization)
         {
+            if (Session["LogedUserID"] != null)
+            {
             if (ModelState.IsValid)
             {
                 //db.Organizations.Add(organization);
                 //db.SaveChanges();
                 _organizationManager.Add(organization);
                 return RedirectToAction("Index");
+
             }
 
             return View(organization);
+                }
+            return RedirectToAction("Login", "Admin");
         }
 
         // GET: /Organization/Edit/5
         public ActionResult Edit(int? id)
         {
+            if (Session["LogedUserID"] != null)
+            {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -86,6 +101,8 @@ namespace AssetTracking.Controllers
                 return HttpNotFound();
             }
             return View(organization);
+                }
+            return RedirectToAction("Login", "Admin");
         }
 
         // POST: /Organization/Edit/5
@@ -95,6 +112,8 @@ namespace AssetTracking.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include="OrganizationID,OrganizationName,OrganizationShortName,OrganizationLocation")] Organization organization)
         {
+            if (Session["LogedUserID"] != null)
+            {
             if (ModelState.IsValid)
             {
                 //db.Entry(organization).State = EntityState.Modified;
@@ -103,11 +122,15 @@ namespace AssetTracking.Controllers
                 return RedirectToAction("Index");
             }
             return View(organization);
+                }
+            return RedirectToAction("Login", "Admin");
         }
 
         // GET: /Organization/Delete/5
         public ActionResult Delete(int? id)
         {
+            if (Session["LogedUserID"] != null)
+            {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -118,6 +141,8 @@ namespace AssetTracking.Controllers
                 return HttpNotFound();
             }
             return View(organization);
+                }
+            return RedirectToAction("Login", "Admin");
         }
 
         // POST: /Organization/Delete/5
@@ -125,10 +150,14 @@ namespace AssetTracking.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(long id)
         {
+            if (Session["LogedUserID"] != null)
+            {
             _organizationManager.Remove(id);
             //db.Organizations.Remove(organization);
             //db.SaveChanges();
             return RedirectToAction("Index");
+            }
+            return RedirectToAction("Login", "Admin");
         }
 
         protected override void Dispose(bool disposing)
